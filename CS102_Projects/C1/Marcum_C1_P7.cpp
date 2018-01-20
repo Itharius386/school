@@ -45,7 +45,7 @@ class Cash{
             int i = 0;
             cout << endl << setw(14) << "Denomination" <<setw(10) << "Quantity" << endl;
             cout.fill('-');
-            cout << '  ' << setw(22) << '-' << endl;
+            cout << "  " << setw(22) << '-' << endl;
             cout.fill(' ');
             for (;i < 6; i++){
                 cout << setw(14) << d_list[i] << setw(10) << dollars[i] << endl;
