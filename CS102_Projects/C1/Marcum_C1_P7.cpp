@@ -17,7 +17,7 @@
 //namespace
 using namespace std;
 
-//class
+//classes
 class Cash{
     private:
         //dollar and cents array
@@ -36,12 +36,12 @@ class Cash{
         //display values
         void display(){
             //attempts to do this as a map failed when I realized that maps are sorted alphabetically for effecient sorting
-            //map <string, int>::iterator loop;
-            //for (loop = dollars.begin(); loop != dollars.end() ; loop++)
-            //   cout << setw(15) << loop -> first << setw(10) << loop -> second << endl;
-            //cout << endl;
-            //for (loop = cents.begin(); loop != cents.end() ; loop++)
-            //    cout << setw(15) << loop -> first << setw(10) <<loop -> second << endl;
+            /* map <string, int>::iterator loop;
+            for (loop = dollars.begin(); loop != dollars.end() ; loop++)
+               cout << setw(15) << loop -> first << setw(10) << loop -> second << endl;
+            cout << endl;
+            for (loop = cents.begin(); loop != cents.end() ; loop++)
+                cout << setw(15) << loop -> first << setw(10) <<loop -> second << endl; */
             int i = 0;
             cout << endl << setw(14) << "Denomination" <<setw(10) << "Quantity" << endl;
             cout.fill('-');
@@ -96,17 +96,17 @@ Cash::Cash(double total){
     //for debugging
     //cout << t_dollar << endl << cash << endl << t_cents << endl <<  (cash - t_dollar) << endl;
     if (t_dollar > 0){
-    dollars[0] = t_dollar / 100;
-    dollars[1] = (t_dollar % 100) / 50;
-    dollars[2] = (t_dollar % 50) / 20;
-    dollars[3] = (t_dollar % 50 % 20) / 10;
-    dollars[4] = (t_dollar % 10) / 5;
-    dollars[5] = (t_dollar % 5);}
+		dollars[0] = t_dollar / 100;
+		dollars[1] = (t_dollar % 100) / 50;
+		dollars[2] = (t_dollar % 50) / 20;
+		dollars[3] = (t_dollar % 50 % 20) / 10;
+		dollars[4] = (t_dollar % 10) / 5;
+		dollars[5] = (t_dollar % 5);}
     if (t_cents > 0){
-    cents[0] = t_cents / 25;
-    cents[1] = (t_cents % 25) / 10;
-    cents[2] = (t_cents % 25 % 10) / 5;
-    cents[3] = (t_cents % 25 % 10 % 5);}
+		cents[0] = t_cents / 25;
+		cents[1] = (t_cents % 25) / 10;
+		cents[2] = (t_cents % 25 % 10) / 5;
+		cents[3] = (t_cents % 25 % 10 % 5);}
 }
 
 //receives a double as input
@@ -120,3 +120,4 @@ void din(string phrase, double *num){
     cin >> *num;
     }
   }
+
