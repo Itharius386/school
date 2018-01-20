@@ -10,7 +10,6 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 //headers
-#include "stdafx.h"
 #include <iostream>
 #include <cmath>
 #include <iomanip>
@@ -121,3 +120,4 @@ void din(string phrase, double *num){
     cin >> *num;
     }
   }
+
