@@ -7,7 +7,7 @@
  *                                                                                                 *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-//keeping things simple
+//keeping things simpler
 
 //included headers
 #include <iostream>
@@ -43,8 +43,9 @@ for (;i < repeat;i++){
     d_in(&cash);
     total_cash[cash] = (cash + cash * tax_rate);
   }
-//output value with tax
+//output values with tax
     cout << setw(15) << "cash value" << setw(15) << "with tax" << endl;
+    //iterator for map
     map<double,double>:: iterator loop;
     for (loop = total_cash.begin(); loop != total_cash.end(); loop++){
     cout << setw(15) << fixed << setprecision(2) << loop->first << setw(15 )<< loop->second << endl;}
