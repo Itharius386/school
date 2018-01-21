@@ -1,5 +1,5 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * 
+ *
  * Author: James Marcum                                                    *
  * Class: CS 102                                                           *
  *                                                                         *
@@ -16,7 +16,7 @@ using namespace std;
 
 //Circle class
 class Circle
-{   
+{
     //give access to radius
     friend bool comp(const Circle & a, const Circle & b);
 
@@ -24,7 +24,7 @@ class Circle
     float radius = -1;
     //pi = 3.14159
     float PI = 3.14159;
-    
+
     //setters - all convert to radius
     public:
     void setRadius(float r)
@@ -117,11 +117,11 @@ for (i = 0 ; i < size ; i++)
     }
 
 //Ask to sort
-cout << "Would you like your circles sorted by size?(y/n) ";
+cout << "\nWould you like your circles sorted by size?(y/n) ";
 while (true){
     cin >> cirsort;
     cirsort = tolower(cirsort);
-    if (cirsort == 'y' || cirsort == 'n')  
+    if (cirsort == 'y' || cirsort == 'n')
         break;
     else
         cout << "Invalid";
