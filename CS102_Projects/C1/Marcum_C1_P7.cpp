@@ -14,7 +14,7 @@
 #include <cmath>
 #include <iomanip>
 #include <string>
-//so you can't initialize an array within a class, but vectors work
+//so you can't initialize an array within a class unless you are in C++11 or higher, but vectors work allegedly
 #include <vector>
 //namespace
 using namespace std;
@@ -23,14 +23,13 @@ using namespace std;
 //This is overkill for the scope of the program, but it seemed like fun
 class Cash{
     private:
-        //dollar and cents array
-        vector<int> dollars,
-            cents;
+        //dollar and cents container
+        vector<int> dollars, cents;
         //total cash handler
         double cash=0;
         //total for dollar and total for cents
         int t_dollar=0, t_cents=0;
-        //bill name array to match dollar and cents
+        //bill name vector to match dollar and cents
         vector<string> d_list = {"Hundreds","Fifties","Twenties","Tens","Fives","Ones"}
                ,c_list = {"Quaters", "Dimes" , "Nickles", "Pennies"};
 
@@ -38,24 +37,16 @@ class Cash{
         //removed getters/setters for now
         //display values
         void display(){
-            //attempts to do this as a map failed when I realized that maps are sorted alphabetically for effecient sorting
-            /* map <string, int>::iterator loop;
-            for (loop = dollars.begin(); loop != dollars.end() ; loop++)
-               cout << setw(15) << loop -> first << setw(10) << loop -> second << endl;
-            cout << endl;
-            for (loop = cents.begin(); loop != cents.end() ; loop++)
-                cout << setw(15) << loop -> first << setw(10) <<loop -> second << endl; */
             cout << endl << setw(14) << "Denomination" <<setw(10) << "Quantity" << endl;
             cout.fill('-');
             cout << "  " << setw(22) << '-' << endl;
             cout.fill(' ');
-            if (t_dollars > 0)
-              {for (int i = 0; i < dollars.size(); i++){
-                  cout << setw(14) << d_list[i] << setw(10) << dollars[i] << endl;
-                }}
+            if (t_dollar > 0){
+              for (int i = 0; i < dollars.size(); i++){
+                  cout << setw(14) << d_list[i] << setw(10) << dollars[i] << endl;}}
             cout << endl;
-            if (t_cents > 0)
-              {for (int i = 0; i < cents.size(); i ++){
+            if (t_cents > 0){
+              for (int i = 0; i < cents.size(); i ++){
                   cout << setw(14) << c_list[i] << setw(10) << cents[i] << endl;
               }}
             cout << endl;
@@ -65,26 +56,22 @@ class Cash{
 };
 
 //prototype
-//double input prototype
 void d_in(string, double *);
 
 //***BEGIN MAIN***//
-
 int main(){
     //init the input and prompt string
     double money=0;
     string prompt = "Enter a monetary value here (we accept change): ";
     cout << "WELCOME TO MONEY'MATIC\n\n";
-    //get cash - error checking input
+    //get cash
     d_in(prompt ,&money);
     //make it bills
     Cash bills(money);
     //show it off
     bills.display();
-    //Main in 7 lines
     return 0;
 }
-
 //***END MAIN***//
 
 //Cash constructor function
