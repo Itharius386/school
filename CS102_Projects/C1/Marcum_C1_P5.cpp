@@ -8,7 +8,6 @@
  *                                                                                                 *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-// **warning** did not do much checking for user input errors
 
 //headers
 #include <iostream>
@@ -24,10 +23,10 @@ using namespace std;
 //class
 class PolySolve{
     private:
-        //degree of polynomial, max degree
+        //degree of polynomial
         int degree;
         //coeffient array
-        double coeff[64];
+        double coeff[32];
     public:
         //set total degree of polynomial
         void setDegree(int poly_power){degree = poly_power;}
@@ -68,26 +67,31 @@ class PolySolve{
 };
 
 //prototypes
+//input result variable, chars to be checked array, and array size
 void c_in(char*,char*,int);
+//input result variable
 void d_in(double*);
 
 //BEGIN MAIN
 int main(){
     int poly_degree = 1, i = 0;
     double coeffient = 0, x=0;
+    //holds all entered x and their results
     map<double, double> all_x;
+    //input and check arrays
     char input, in_check[] = {'t','s'}, repeat = 'y', re_check[] = {'y','n'};
+    //polysolve class
     PolySolve test, user;
 
+    //start
     cout << "\nWelcome to POLY SOLVER 9000!";
     cout << "\n\nYou can run our test function by entering 't' now or enter 's' to solve your own polynomial: ";
-
     while (true){
         c_in(&input,in_check,2);
         //if test function
         if (tolower(input) == 't'){
-        //test polynomial (the textbook's given equation)
-        //not a good way to do this but it's good enough for now
+            //test polynomial (the textbook's given equation)
+            //not a good way to do this but it's good enough for now
             test.setDegree(5);
             test.set1Coeff(3,5);
             test.set1Coeff(2,4);
@@ -95,9 +99,10 @@ int main(){
             test.set1Coeff(-1,2);
             test.set1Coeff(7,1);
             test.set1Coeff(-6,0);
-        //show function
+            //show function
             cout << test.getFunction() << endl;
             while (true){
+              //get x
               cout << "Enter a value for x: ";
               d_in(&x);
               all_x[x]=test.Solve(x);
