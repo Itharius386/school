@@ -14,22 +14,25 @@
 #include <cmath>
 #include <iomanip>
 #include <string>
+//so you can't initialize an array within a class, but vectors work
+#include <vector>
 //namespace
 using namespace std;
 
 //classes
+//This is overkill for the scope of the program, but it seemed like fun
 class Cash{
     private:
         //dollar and cents array
-        int dollars[6] = {0},
-            cents[4] = {0};
+        vector<int> dollars,
+            cents;
         //total cash handler
         double cash=0;
         //total for dollar and total for cents
         int t_dollar=0, t_cents=0;
         //bill name array to match dollar and cents
-        const string d_list[6] = {"Hundreds","Fifties","Twenties","Tens","Fives","Ones"}
-               ,c_list[4] = {"Quaters", "Dimes" , "Nickles", "Pennies"};
+        vector<string> d_list = {"Hundreds","Fifties","Twenties","Tens","Fives","Ones"}
+               ,c_list = {"Quaters", "Dimes" , "Nickles", "Pennies"};
 
     public:
         //removed getters/setters for now
@@ -42,17 +45,17 @@ class Cash{
             cout << endl;
             for (loop = cents.begin(); loop != cents.end() ; loop++)
                 cout << setw(15) << loop -> first << setw(10) <<loop -> second << endl; */
-            int i = 0;
             cout << endl << setw(14) << "Denomination" <<setw(10) << "Quantity" << endl;
             cout.fill('-');
             cout << "  " << setw(22) << '-' << endl;
             cout.fill(' ');
-            for (;i < 6; i++){
-                cout << setw(14) << d_list[i] << setw(10) << dollars[i] << endl;
-            }
+            if (t_dollars > 0)
+              {for (int i = 0; i < dollars.size(); i++){
+                  cout << setw(14) << d_list[i] << setw(10) << dollars[i] << endl;
+                }}
             cout << endl;
             if (t_cents > 0)
-              {for (i=0; i < 4; i++){
+              {for (int i = 0; i < cents.size(); i ++){
                   cout << setw(14) << c_list[i] << setw(10) << cents[i] << endl;
               }}
             cout << endl;
@@ -63,17 +66,17 @@ class Cash{
 
 //prototype
 //double input prototype
-void din(string, double *);
+void d_in(string, double *);
 
 //***BEGIN MAIN***//
 
 int main(){
     //init the input and prompt string
     double money=0;
-    string prompt = "Enter a monetary value here (we accept change) : ";
+    string prompt = "Enter a monetary value here (we accept change): ";
     cout << "WELCOME TO MONEY'MATIC\n\n";
     //get cash - error checking input
-    din(prompt ,&money);
+    d_in(prompt ,&money);
     //make it bills
     Cash bills(money);
     //show it off
@@ -96,21 +99,21 @@ Cash::Cash(double total){
     //for debugging
     //cout << t_dollar << endl << cash << endl << t_cents << endl <<  (cash - t_dollar) << endl;
     if (t_dollar > 0){
-		dollars[0] = t_dollar / 100;
-		dollars[1] = (t_dollar % 100) / 50;
-		dollars[2] = (t_dollar % 50) / 20;
-		dollars[3] = (t_dollar % 50 % 20) / 10;
-		dollars[4] = (t_dollar % 10) / 5;
-		dollars[5] = (t_dollar % 5);}
+		dollars.push_back(t_dollar / 100);
+		dollars.push_back((t_dollar % 100) / 50);
+		dollars.push_back((t_dollar % 50) / 20);
+		dollars.push_back((t_dollar % 50 % 20) / 10);
+		dollars.push_back((t_dollar % 10) / 5);
+		dollars.push_back((t_dollar % 5));}
     if (t_cents > 0){
-		cents[0] = t_cents / 25;
-		cents[1] = (t_cents % 25) / 10;
-		cents[2] = (t_cents % 25 % 10) / 5;
-		cents[3] = (t_cents % 25 % 10 % 5);}
+		cents.push_back(t_cents / 25);
+		cents.push_back((t_cents % 25) / 10);
+		cents.push_back((t_cents % 25 % 10) / 5);
+		cents.push_back((t_cents % 25 % 10 % 5));}
 }
 
 //receives a double as input
-void din(string phrase, double *num){
+void d_in(string phrase, double *num){
   cout << phrase;
   cin >> *num;
   while (cin.fail()){
@@ -120,4 +123,3 @@ void din(string phrase, double *num){
     cin >> *num;
     }
   }
-
