@@ -1,9 +1,8 @@
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * b bh * * * * * * * * * * * * * * *
  *                                                                                                 *
  *  Name: Poly Solver                                                                              *
  *  Author: James Marcum                                                                           *
  *  Class: CS 102                                                                                  *
- *  Time: 2 hours                                                                                  *
  *                                                                                                 *
  *  Function: Solve polynomials                                                                    *
  *                                                                                                 *

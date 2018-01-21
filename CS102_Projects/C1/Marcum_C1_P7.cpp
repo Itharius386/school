@@ -3,7 +3,6 @@
  *  Name: Cash Counter                                                                             *
  *  Author: James Marcum                                                                           *
  *  Class: CS 102                                                                                  *
- *  Time: 2 hours - floating point math added 30 minutes                                           *
  *                                                                                                 *
  *  Function: Seperates a given dollar amount into currency of lowest terms                        *
  *                                                                                                 *
