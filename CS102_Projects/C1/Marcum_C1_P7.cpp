@@ -25,15 +25,13 @@ class Cash{
         //dollar and cents container
         vector<int> dollars, cents;
         //total cash handler
-        double cash=0;
+        double cash;
         //total for dollar and total for cents
-        int t_dollar=0, t_cents=0;
+        int t_dollar, t_cents;
         //bill name vector to match dollar and cents
-        vector<string> d_list = {"Hundreds","Fifties","Twenties","Tens","Fives","Ones"}
-               ,c_list = {"Quaters", "Dimes" , "Nickles", "Pennies"};
+        static string d_list[], c_list[];
 
     public:
-        //removed getters/setters for now
         //display values
         void display(){
             cout << endl << setw(14) << "Denomination" <<setw(10) << "Quantity" << endl;
@@ -53,6 +51,9 @@ class Cash{
         //cash construct prototype
         Cash(double);
 };
+
+string Cash::d_list[] = {"Hundreds","Fifties","Twenties","Tens","Fives","Ones"}
+       ,Cash::c_list[] = {"Quaters", "Dimes" , "Nickles", "Pennies"};
 
 //prototype
 void d_in(string, double *);

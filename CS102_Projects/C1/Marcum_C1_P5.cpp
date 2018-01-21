@@ -15,6 +15,9 @@
 #include <cmath>
 #include <iomanip>
 #include <string>
+#include <sstream>
+#include <vector>
+#include <map>
 //namespace
 using namespace std;
 
@@ -27,12 +30,9 @@ class PolySolve{
         double coeff[64];
     public:
         //set total degree of polynomial
-        void setDegree(int poly_power)
-        {degree = poly_power;}
+        void setDegree(int poly_power){degree = poly_power;}
         //set coefficent at given power of x
-        void set1Coeff(double value, int x)
-        {coeff[x] = value;}
-
+        void set1Coeff(double value, int x){coeff[x] = value;}
         //returns f(x) as a string
         string getFunction(){
         stringstream ss;
@@ -49,15 +49,14 @@ class PolySolve{
                         ss << " + ";}
         }
         string f_x = ss.str();
-        return f_x;}
-
+        return f_x;
+        }
         //returns degree of polynomial
         int getDegree()
         {return degree;}
         //return coefficent at given power
         double getCoeff( int power)
         {return coeff[power];}
-
         //solve Polynomial for x
         double Solve(double x){
             int i;
@@ -76,7 +75,8 @@ void d_in(double*);
 int main(){
     int poly_degree = 1, i = 0;
     double coeffient = 0, x=0;
-    char input, in_check[] = {'t','s'};
+    map<double, double> all_x;
+    char input, in_check[] = {'t','s'}, repeat = 'y', re_check[] = {'y','n'};
     PolySolve test, user;
 
     cout << "\nWelcome to POLY SOLVER 9000!";
@@ -87,7 +87,7 @@ int main(){
         //if test function
         if (tolower(input) == 't'){
         //test polynomial (the textbook's given equation)
-        //not a good way to do this I think
+        //not a good way to do this but it's good enough for now
             test.setDegree(5);
             test.set1Coeff(3,5);
             test.set1Coeff(2,4);
@@ -96,10 +96,16 @@ int main(){
             test.set1Coeff(7,1);
             test.set1Coeff(-6,0);
         //show function
-            cout << test.getFunction();
-            cout << endl << "Enter a value for x: ";
-            d_in(&x);
-            cout << "f(" << x << ") = " << test.Solve(x);
+            cout << test.getFunction() << endl;
+            while (true){
+              cout << "Enter a value for x: ";
+              d_in(&x);
+              all_x[x]=test.Solve(x);
+              //cout << "f(" << x << ") = " << all_x[x];
+              cout << "\nInclude additional values of x? (y/n): ";
+              c_in(&repeat,re_check,2);
+              if (repeat == 'n')
+                  break;}
             break;}
         //else set your own
         else {
@@ -111,12 +117,26 @@ int main(){
                 cin >> coeffient;
                 user.set1Coeff(coeffient,i);}
             cout << "\nYour function is:\n";
-            cout << user.getFunction();
-            cout << "\n\nEnter a value for x: ";
+			cout << user.getFunction() << endl;
+      while (true){
+            cout << "Enter a value for x: ";
             d_in(&x);
-            cout << "f(" << x << ") = " << user.Solve(x);
+            all_x[x]=user.Solve(x);
+            //cout << "f(" << x << ") = " << all_x[x];
+            cout << "\nInclude additional values of x? (y/n): ";
+            c_in(&repeat,re_check,2);
+            if (repeat == 'n')
+                break;}
             break;}}
-    return 0;
+  if (input == 's')
+    cout << user.getFunction() << endl;
+  else
+    cout << test.getFunction() << endl;
+
+  map<double,double>::iterator loop;
+  for (loop = all_x.begin() ; loop != all_x.end() ; loop++){
+    cout << "f(" << loop->first << ") = " << loop->second <<endl;}
+return 0;
 }
 //END main
 

@@ -31,7 +31,7 @@ int main(){
     cout << "Enter tax rate (5 for 5%): ";
     d_in(&tax_rate);
 //check input if it was entered as whole number
-//makes program not work for tax rates above 100% and below 1%, but you have other concerns at those extremes
+//makes program not work for tax rates above 100% (if entered as decimal) and below 1%, but you have other concerns at those extremes
     if (tax_rate > 1)
         tax_rate /= 100;
 //output value with tax
@@ -50,3 +50,4 @@ void d_in(double *input){
         cin >> *input;
         }
 }
+
