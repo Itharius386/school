@@ -20,14 +20,16 @@
 //namespace
 using namespace std;
 
+const double PI = 3.14159;
+
 //Sphere object class - based on radius
 class Sphere
 {
 private:
     double radius;
-    #ifndef PI
-    #define PI 3.14159
-    #endif
+    //#ifndef PI
+    //#define PI 3.14159
+    //#endif
 public:
     //constructer prototype
     Sphere(double num, char type);
@@ -94,11 +96,15 @@ return 0;
 //went and built a proper constructer
 //constructer
 Sphere::Sphere(double num, char type){
+  if (num <=0){
+    radius = 1;
+    cout << "Invalid Entry, defaulted to radius of 1\n";}
+  else{
   switch (type){
       case 'r':   radius = num; break;
       case 'd':   radius = num/2; break;
       case 'a':   radius = sqrt(num/(4*PI)); break;
-      case 'v':   radius = cbrt((num/PI)*(3.0/4)); break;}
+      case 'v':   radius = cbrt((num/PI)*(3.0/4)); break;}}
 }
 
 //error checking input for doubles
