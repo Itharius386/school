@@ -3,6 +3,8 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <windows.h>
+#include <stdlib.h>
 using namespace std;
 
 //expense class - takes in type and amount/month
@@ -24,7 +26,7 @@ class Expense{
 
 
 int main(){
-  
+
 
 
   return 0;
