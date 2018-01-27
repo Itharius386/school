@@ -13,7 +13,7 @@
 #include <cmath>
 #include <iomanip>
 #include <string>
-//so you can't initialize an array within a class unless you are in C++11 or higher, but vectors work allegedly
+//so you can't initialize an array within a class unless you are in C++11 or higher, but vectors work
 #include <vector>
 //namespace
 using namespace std;
@@ -56,20 +56,29 @@ string Cash::d_list[] = {"Hundreds","Fifties","Twenties","Tens","Fives","Ones"}
        ,Cash::c_list[] = {"Quaters", "Dimes" , "Nickles", "Pennies"};
 
 //prototype
-void d_in(string, double *);
+void d_in(double*);
+void c_in(char*,char*,int);
 
 //***BEGIN MAIN***//
 int main(){
     //init the input and prompt string
     double money=0;
-    string prompt = "Enter a monetary value here (we accept change): ";
-    cout << "WELCOME TO MONEY'MATIC\n\n";
+    char repeat = 'y', re_check[] = {'y','n'};
+    cout << "WELCOME TO MONEY'MATIC\nConvert your money into bills!\n\n";
+
+    while (true){
+    cout << "Enter a monetary value here (we accept change): ";
     //get cash
-    d_in(prompt ,&money);
+    d_in(&money);
     //make it bills
     Cash bills(money);
     //show it off
     bills.display();
+    cout << "Would you like to enter more money? (y/n): ";
+    c_in(&repeat,re_check,2);
+    if (repeat == 'n')
+      break;
+    }
     return 0;
 }
 //***END MAIN***//
@@ -100,8 +109,7 @@ Cash::Cash(double total){
 }
 
 //receives a double as input
-void d_in(string phrase, double *num){
-  cout << phrase;
+void d_in(double *num){
   cin >> *num;
   while (cin.fail()){
     cout << "Invalid entry, try again: ";
@@ -109,4 +117,26 @@ void d_in(string phrase, double *num){
     cin.ignore(256,'\n');
     cin >> *num;
     }
+  }
+
+  void c_in(char *input, char check[], int array_size){
+      int i, b_check=0;
+      char temp;
+      while (true){
+          cin >> temp;
+          temp = tolower(temp);
+          for (i=0;i<array_size;i++){
+            if (temp == check[i]){
+              cin.clear();
+              cin.ignore(256,'\n');
+              b_check=1;
+              break;}}
+        if (b_check)
+          break;
+        else{
+            cin.clear();
+            cin.ignore(256,'\n');
+            cout << "Invalid entry, try agian: ";}
+      }
+      *input = temp;
   }
