@@ -49,8 +49,11 @@ int main(){
     //difficulty settings
     else if (repeat == 'd'){
       cout << "Choose a difficulty (1 = Easy, 2 = Medium, 3 = Hard): ";
+      //quick force check that the number entered is 1-3
       s_i_in(&difficulty,dif_check,3);
+      //set back to repeat so it continues to loop
       repeat = 'y';
+      //clear the screen
       system("CLS");}
     }
 
@@ -59,17 +62,19 @@ int main(){
 
 //END MAIN
 
-//TUTORING
+//TUTORING - input a difficulty level
+//difficulty is exponential
 int tutor(int dif){
   //init num1/2, answer, and operation identifier
+  //operation is between 1-3, at 1:+, 2:+ -, 3:+ - *
   int num1, num2, ops = rand()%dif + 1;
   double ans = 0;
-  //set numbers = to a random number with respect to a power of difficulty
+  //set numbers = to a random number with respect to a power of the difficulty
   num1 = rand()%static_cast<int>(pow(10,dif)) + 1;
   num2 = rand()%static_cast<int>(pow(10,dif)) + 1;
   //output num1
   cout<< setw(10) << num1 << endl;
-  //determine which operation will take place
+  //determine which operation will take place, priint it and calculate the answer
   switch(ops){
     case(1): cout << " +"; ans = num1 + num2; break;
     case(2): cout << " -"; ans = num1 - num2; break;
@@ -82,6 +87,7 @@ int tutor(int dif){
   cin.get();
   //show answer
   cout<< setw(10) << ans << endl;
+  //return success
   return 1;
 }
 
