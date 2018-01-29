@@ -24,13 +24,16 @@ using namespace std;
 //prototypes
 void display();
 void story_time(string);
+void lambda_char(char c);
 
 //BEGIN MAIN
 int main(){
   //Would have done it as a vector of pairs but was too far beyond what was needed to accomplish the project
   //basic vector of strings is enough - needed it for shuffling
   //0 name, 1 city, 2 age, 3 college, 4 job, 5 pet, 6 petname
-  vector<string> nouns = {"name","city","age","college","job","pet","petname"};
+  vector<string> nouns(7)// = {"name","city","age","college","job","pet","petname"};
+  //had to comment out the defaults and add '(7)' for initializing because quincy c++ std does not allow for '= {}' to initialize vectors
+  
   //stringstream to put the entire story together as a single string
   stringstream story;
 
@@ -73,6 +76,8 @@ int main(){
 
   return 0;
 }
+//END MAIN
+
 
 //basic display
 void display(){
@@ -82,12 +87,20 @@ void display(){
       << "|         Enter 'random' for a surprise         |" << endl \
       << "#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#" << endl << endl;}
 
+
+//Story Time Function
 //make it print 1 letter at a time like someone is writing it out in front of you
 //iterate over the string from begin to end, lambda expression to take each character and output it followed by pause
 //It's important to put the stream into another string instead of converting it with story.str().begin() because it won't end
 //just put it in a function to clean up main
+
 void story_time(string story_str){
-  for_each(story_str.begin(), story_str.end(), [](char c){
-    cout << c;
-    Sleep(80);});
+  for_each(story_str.begin(), story_str.end(),lambda_char);
 }
+
+//Lambda functions don't exist in Quincy's std C++ package. had to make it it's own function
+//otherwise replace 'lambda_char' above with '[](char c){cout << c; Sleep(80);}' for the same effect without making a second named function call
+void lambda_char(char c){
+cout << c;
+Sleep(80);}
+

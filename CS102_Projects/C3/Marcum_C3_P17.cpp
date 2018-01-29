@@ -70,8 +70,10 @@ int tutor(int dif){
   int num1, num2, ops = rand()%dif + 1;
   double ans = 0;
   //set numbers = to a random number with respect to a power of the difficulty
-  num1 = rand()%static_cast<int>(pow(10,dif)) + 1;
-  num2 = rand()%static_cast<int>(pow(10,dif)) + 1;
+  //Had to static_cast (dif) to get it to compile in Quincy, had to use 10.0 instead of 10 because of overload ambiguity
+  //static_cast on the result because of modulus only working with int values
+  num1 = rand()%static_cast<int>(pow(10.0,static_cast<int>(dif))) + 1;
+  num2 = rand()%static_cast<int>(pow(10.0,static_cast<int>(dif))) + 1;
   //output num1
   cout<< setw(10) << num1 << endl;
   //determine which operation will take place, priint it and calculate the answer
@@ -146,3 +148,4 @@ void s_i_in(int *input, int check[], int array_size){
     }
     *input = temp;
 }
+

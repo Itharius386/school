@@ -92,7 +92,8 @@ void d_in(double *input){
 
 //basic display
 void display(){
-  cout << "#=====================================================================================#" << endl \
-       << "|                         Welcome to the Grade'o'matic 9000.1                         |" << endl \
-       << "|                   We calculate your average so you don't have to!                   |" << endl \
-       << "#=====================================================================================#" << endl << endl;}
+  cout << "#===========================================================================#" << endl \
+       << "|                    Welcome to the Grade'o'matic 9000.1                    |" << endl \
+       << "|              We calculate your average so you don't have to!              |" << endl \
+       << "#===========================================================================#" << endl << endl;}
+
