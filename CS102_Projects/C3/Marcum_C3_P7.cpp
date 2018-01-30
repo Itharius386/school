@@ -50,10 +50,22 @@ while (repeat == 'y'){
     cout << "#~~~~~~~~~~#~~~~~~~~~~*Settings*~~~~~~~~~~#~~~~~~~~~~#" << endl;
     cout << "Price of Adult Tickets (Default $10):     $";
     d_in(&a_tic_cost);
+    //positive check
+    while (a_tic_cost < 0){
+      cout << "Positive Values only: ";
+      d_in(&a_tic_cost);}
     cout << "Price of Child Tickets (Default $6):      $";
     d_in(&c_tic_cost);
+    //positive check
+    while (c_tic_cost < 0){
+      cout << "Positive Values only: ";
+      d_in(&c_tic_cost);}
     cout << "Percent of earnings retained (Default 20): ";
     d_in(&retained_percent);
+    //0-100 check
+    while (retained_percent < 0 || retained_percent > 100){
+      cout << "Must be between 0-100: ";
+      d_in(&retained_percent);}
     //divide entered number by 100 to get it as a percentage
     retained_percent /= 100;}
   //else it's the movie title
@@ -61,8 +73,16 @@ while (repeat == 'y'){
     //get tickets sold
     cout << "Enter number of Adult Tickets sold: ";
     i_in(&a_tickets);
+    //positive check
+    while (a_tickets < 0){
+      cout << "Positive Values only: ";
+      i_in(&a_tickets);}
     cout << "Enter number of Child Tickets sold: ";
     i_in(&c_tickets);
+    //positive check
+    while (c_tickets < 0){
+      cout << "Positive Values only: ";
+      i_in(&c_tickets);}
 
     //calculate gross profit and retained earnings (The part you keep)
     gross_profit = (a_tickets * a_tic_cost + c_tickets * c_tic_cost);

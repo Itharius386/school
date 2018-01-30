@@ -48,7 +48,7 @@ int main(){
       system("CLS");
     //difficulty settings
     else if (repeat == 'd'){
-      cout << "Choose a difficulty (1 = Easy, 2 = Medium, 3 = Hard): ";
+      cout << "Choose a difficulty (1 = Easy, 2 = Medium, 3 = Hard, 4 = Lunatic): ";
       //quick force check that the number entered is 1-3
       s_i_in(&difficulty,dif_check,3);
       //set back to repeat so it continues to loop

@@ -14,6 +14,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
+#include <windows.h>
 //namespace
 using namespace std;
 
@@ -21,6 +22,7 @@ using namespace std;
 void d_in(double*);
 void display();
 void c_in(char*,char*,int);
+void display_settings(double*, double*);
 
 //BEGIN MAIN
 int main(){
@@ -28,25 +30,38 @@ int main(){
   double  property_value = 10000, \
   assessed_value, assessed_rate = .6, \
   tax_rate = .75, tax_owed = 0;
-  char repeat = 'y', re_check[] = {'y','n'};
-  //display banner
-  display();
+  char repeat = 'y', re_check[] = {'y','n','s'};
+
   //enter main loop
   while (repeat == 'y'){
-  //get property value
-  cout << left << setw(35) << "\n Enter the Actual Property Value:" << "$";
-  d_in(&property_value);
-  //calculate
-  assessed_value = (property_value * assessed_rate);
-  tax_owed = assessed_value / 100.0 * tax_rate;
-  //output values
-  cout << fixed << setprecision(2) << setw(35) << " Assessed Value of Property: " << "$" << assessed_value << endl \
-       << setw(35) << " Total Taxes Owed:" << "$" << tax_owed << endl;
-  //loop?
-  cout << "\n Would you like more taxes? (y/n): ";
-  c_in(&repeat,re_check,2);
+    //display banner
+    display();
+    //get property value
+    cout << left << setw(35) << "\nEnter the Actual Property Value:" << "$";
+    d_in(&property_value);
+    //positive check
+    while (property_value < 0){
+      cout << "Positive Values only: ";
+      d_in(&property_value);}
+    //calculate assessed = 60% actual
+    assessed_value = (property_value * assessed_rate);
+    //taxes = .75 for every 100
+    tax_owed = assessed_value / 100.0 * tax_rate;
+    //output values
+    cout << fixed << setprecision(2) << setw(35) << "Assessed Value of Property: " << "$" << assessed_value << endl \
+         << setw(35) << "Total Taxes Owed:" << "$" << tax_owed << endl;
+    //loop?
+    cout << "\nWould you like more taxes? (y/n or 's' for settings): ";
+    c_in(&repeat,re_check,3);
+    if (repeat == 'y')
+      system("CLS");
+    if (repeat == 's'){
+      display_settings(&assessed_rate,&tax_rate);
+      repeat = 'y';
+      system("CLS");
+      }
   }
-  //exit loop
+  //exit loop if 'n'
 
   return 0;
 }
@@ -95,4 +110,13 @@ void display(){
        << "|    We solve all property tax needs in one place!   |" << endl \
        << "#----------------------------------------------------#" << endl;
 
+}
+
+void display_settings(double*assess,double*rate){
+  cout << "$------------#---------Settings---------#------------$" << endl;
+  cout << "Enter the assessed rate percentage (default 60): ";
+  d_in(assess);
+  *assess /= 100;
+  cout << "Enter the tax rate per $100 (default 0.75): ";
+  d_in(rate);
 }

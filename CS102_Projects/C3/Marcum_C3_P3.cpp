@@ -31,6 +31,10 @@ int main(){
   //get number of test scores to be entered
   cout << "How many test scores would you like to enter: ";
   i_in(&max_num);
+  //make sure it was Positive
+  while (max_num < 0){
+    cout << "Positive Values only: ";
+    i_in(&max_num);}
   cout << endl;
   //allocate enough mamory for array of max_num of test scores
   test_score = new double[max_num];
@@ -39,6 +43,10 @@ int main(){
   for (i=0; i < max_num; i++){
     cout << "Enter value for test #" << i+1 << ": ";
     d_in(&test_score[i]);
+    //positive check
+    while (test_score[i] < 0){
+      cout << "Positive Values only: ";
+      d_in(&test_score[i]);}
   }
 
   //calculate average
@@ -49,7 +57,8 @@ int main(){
   //tell average and grade average
   cout << "\nThe average test score is " << fixed << setprecision(1) << average << endl;
   cout << "The letter grade on average is a(n) ";
-  //cast the average as an int and divide by 10 to get an int to give a grade to
+  //cast the average as an int and divide by 10 to get an int to give it a grade
+  //grade scale of 90+ A, 80-89 B, 70-79 C, 60-69 D, 0-59 F
   switch(static_cast<int>(average/10)){
     case(0):case(1):case(2):case(3):case(4):case(5):cout << 'F';break;
     case(6): cout << 'D'; break;
