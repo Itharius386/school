@@ -16,13 +16,15 @@
 #include <iomanip>
 #include <string>
 #include <windows.h>
+#include "marcum_header.h"
+#include "marcum_header.cpp"
 //Namespace
 using namespace std;
 
 //Prototypes
-void i_in(int*);
-void c_in(char*, char*, int);
-void d_in(double*);
+//void i_in(int*);
+//void c_in(char*, char*, int);
+//void d_in(double*);
 
 //BEGIN MAIN
 int main(){
@@ -49,19 +51,12 @@ while (repeat == 'y'){
   if (movie_name == "s") {
     cout << "#~~~~~~~~~~#~~~~~~~~~~*Settings*~~~~~~~~~~#~~~~~~~~~~#" << endl;
     cout << "Price of Adult Tickets (Default $10):     $";
-    d_in(&a_tic_cost);
+    d_in(&a_tic_cost,1);
     //positive check
-    while (a_tic_cost < 0){
-      cout << "Positive Values only: ";
-      d_in(&a_tic_cost);}
     cout << "Price of Child Tickets (Default $6):      $";
-    d_in(&c_tic_cost);
-    //positive check
-    while (c_tic_cost < 0){
-      cout << "Positive Values only: ";
-      d_in(&c_tic_cost);}
+    d_in(&c_tic_cost,1);
     cout << "Percent of earnings retained (Default 20): ";
-    d_in(&retained_percent);
+    d_in(&retained_percent,1);
     //0-100 check
     while (retained_percent < 0 || retained_percent > 100){
       cout << "Must be between 0-100: ";
@@ -72,17 +67,9 @@ while (repeat == 'y'){
   else{
     //get tickets sold
     cout << "Enter number of Adult Tickets sold: ";
-    i_in(&a_tickets);
-    //positive check
-    while (a_tickets < 0){
-      cout << "Positive Values only: ";
-      i_in(&a_tickets);}
+    i_in(&a_tickets,1);
     cout << "Enter number of Child Tickets sold: ";
-    i_in(&c_tickets);
-    //positive check
-    while (c_tickets < 0){
-      cout << "Positive Values only: ";
-      i_in(&c_tickets);}
+    i_in(&c_tickets,1);
 
     //calculate gross profit and retained earnings (The part you keep)
     gross_profit = (a_tickets * a_tic_cost + c_tickets * c_tic_cost);
@@ -108,7 +95,7 @@ while (repeat == 'y'){
 }
 //END MAIN
 
-
+/*
 //Loops to get an integer, if a float is entered it will truncate and clear the stream
 void i_in(int *input){
   cin >> *input;
@@ -155,3 +142,4 @@ void c_in(char *input, char check[], int array_size){
     }
     *input = temp;
 }
+*/

@@ -17,12 +17,14 @@
 #include <ctime>
 #include <string>
 #include <windows.h>
+#include "marcum_header.h"
+#include "marcum_header.cpp"
 //namespace
 using namespace std;
 //prototypes
-void d_in(double*);
-void c_in(char*,char*,int);
-void s_i_in(int*, int*, int);
+//void d_in(double*);
+//void c_in(char*,char*,int);
+//void s_i_in(int*, int*, int);
 int tutor(int);
 void display();
 
@@ -104,7 +106,7 @@ int tutor(int dif){
   return 1;
 }
 
-
+/*
 //error checking input for doubles
 void d_in(double *input){
     cin >> *input;
@@ -159,3 +161,5 @@ void s_i_in(int *input, int check[], int array_size){
     }
     *input = temp;
 }
+*/
+

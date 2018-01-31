@@ -33,10 +33,6 @@ int main(){
   //get number of test scores to be entered
   cout << "How many test scores would you like to enter: ";
   i_in(&max_num,1);
-  //make sure it was Positive
-  while (max_num < 0){
-    cout << "Positive Values only: ";
-    i_in(&max_num,1);}
   cout << endl;
   //allocate enough mamory for array of max_num of test scores
   test_score = new double[max_num];
@@ -44,12 +40,7 @@ int main(){
   //loop get test values
   for (i=0; i < max_num; i++){
     cout << "Enter value for test #" << i+1 << ": ";
-    d_in(&test_score[i],1);
-    //positive check
-    while (test_score[i] < 0){
-      cout << "Positive Values only: ";
-      d_in(&test_score[i],1);}
-  }
+    d_in(&test_score[i],1);}
 
   //calculate average
   for (i=0; i < max_num; i++){

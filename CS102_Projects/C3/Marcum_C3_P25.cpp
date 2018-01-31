@@ -31,9 +31,9 @@ int main(){
   //Would have done it as a vector of pairs but was too far beyond what was needed to accomplish the project
   //basic vector of strings is enough - needed it for shuffling
   //0 name, 1 city, 2 age, 3 college, 4 job, 5 pet, 6 petname
-  vector<string> nouns(7)// = {"name","city","age","college","job","pet","petname"};
+  vector<string> nouns(7);// = {"name","city","age","college","job","pet","petname"};
   //had to comment out the defaults and add '(7)' for initializing because quincy c++ std does not allow for '= {}' to initialize vectors
-  
+
   //stringstream to put the entire story together as a single string
   stringstream story;
 

@@ -15,13 +15,15 @@
 #include <iomanip>
 #include <cmath>
 #include <windows.h>
+#include "marcum_header.h"
+#include "marcum_header.cpp"
 //namespace
 using namespace std;
 
 //prototypes
-void d_in(double*);
+//void d_in(double*);
+//void c_in(char*,char*,int);
 void display();
-void c_in(char*,char*,int);
 void display_settings(double*, double*);
 
 //BEGIN MAIN
@@ -38,11 +40,7 @@ int main(){
     display();
     //get property value
     cout << left << setw(35) << "\nEnter the Actual Property Value:" << "$";
-    d_in(&property_value);
-    //positive check
-    while (property_value < 0){
-      cout << "Positive Values only: ";
-      d_in(&property_value);}
+    d_in(&property_value,1);
     //calculate assessed = 60% actual
     assessed_value = (property_value * assessed_rate);
     //taxes = .75 for every 100
@@ -67,7 +65,7 @@ int main(){
 }
 //END MAIN
 
-
+/*
 //Loops to get an integer, if a float is entered it will truncate and clear the stream
 void d_in(double *input){
   cin >> *input;
@@ -103,6 +101,7 @@ void c_in(char *input, char check[], int array_size){
     }
     *input = temp;
 }
+*/
 
 void display(){
   cout << "#----------------------------------------------------#" << endl \
