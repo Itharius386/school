@@ -18,11 +18,12 @@
 #include <algorithm>
 #include <windows.h>
 #include <sstream>
+#include "marcum_header.h"
+#include "marcum_header.cpp"
 //namespace
 using namespace std;
 
 //prototypes
-void display();
 void story_time(string);
 void lambda_char(char c);
 
@@ -41,7 +42,7 @@ int main(){
   srand(time(0));
 
   //display
-  display();
+  display("Welcome to Story Time Adventures!","Follow the prompts for a story!");
   //big ol' getline for all the words
   cout << "Enter a name: ";
   getline(cin,nouns[0]);
@@ -79,15 +80,6 @@ int main(){
 //END MAIN
 
 
-//basic display
-void display(){
-  cout<< "#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#" << endl \
-      << "|       Welcome to Story Time Adventures!       |" << endl \
-      << "|        Follow the prompts for a story!        |" << endl \
-      << "|         Enter 'random' for a surprise         |" << endl \
-      << "#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#~~#" << endl << endl;}
-
-
 //Story Time Function
 //make it print 1 letter at a time like someone is writing it out in front of you
 //iterate over the string from begin to end, lambda expression to take each character and output it followed by pause
@@ -98,9 +90,8 @@ void story_time(string story_str){
   for_each(story_str.begin(), story_str.end(),lambda_char);
 }
 
-//Lambda functions don't exist in Quincy's std C++ package. had to make it it's own function
-//otherwise replace 'lambda_char' above with '[](char c){cout << c; Sleep(80);}' for the same effect without making a second named function call
+//Lambda functions don't exist in Quincy's std C++ package (min of C++11). had to make it it's own function
+//otherwise replace 'lambda_char' above with '[](char c){cout << c; Sleep(80);}' for the same effect without having to make a second named function call
 void lambda_char(char c){
 cout << c;
 Sleep(80);}
-

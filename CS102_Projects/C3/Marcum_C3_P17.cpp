@@ -22,11 +22,7 @@
 //namespace
 using namespace std;
 //prototypes
-//void d_in(double*);
-//void c_in(char*,char*,int);
-//void s_i_in(int*, int*, int);
 int tutor(int);
-void display();
 
 //BEGIN MAIN
 int main(){
@@ -105,60 +101,3 @@ int tutor(int dif){
   //return success
   return 1;
 }
-
-/*
-//error checking input for doubles
-void d_in(double *input){
-    cin >> *input;
-    while (cin.fail()){
-        cout << "Invalid, try again: ";
-        cin.clear();
-        cin.ignore(256,'\n');
-        cin >> *input;
-        }
-}
-
-//error check and input check characters, pass in array with characters to check input against + array size
-void c_in(char *input, char check[], int array_size){
-    int i, b_check=0;
-    char temp;
-    while (true){
-        cin >> temp;
-        temp = tolower(temp);
-        for (i=0;i<array_size;i++){
-          if (temp == check[i]){
-            cin.clear();
-            cin.ignore(256,'\n');
-            b_check=1;
-            break;}}
-      if (b_check)
-        break;
-      else{
-          cin.clear();
-          cin.ignore(256,'\n');
-          cout << "Invalid entry, try agian: ";}
-    }
-    *input = temp;
-}
-
-//specific integer input
-void s_i_in(int *input, int check[], int array_size){
-    int i, b_check=0, temp;
-    while (true){
-        cin >> temp;
-        for (i=0;i<array_size;i++){
-          if (temp == check[i]){
-            cin.clear();
-            cin.ignore(256,'\n');
-            b_check=1;
-            break;}}
-      if (b_check)
-        break;
-      else{
-          cin.clear();
-          cin.ignore(256,'\n');
-          cout << "Invalid entry, try agian: ";}
-    }
-    *input = temp;
-}
-*/

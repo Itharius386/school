@@ -22,9 +22,6 @@
 using namespace std;
 
 //Prototypes
-//void i_in(int*);
-//void c_in(char*, char*, int);
-//void d_in(double*);
 
 //BEGIN MAIN
 int main(){
@@ -39,12 +36,6 @@ int main(){
 while (repeat == 'y'){
   //display
   display("Welcome to The Movie Money Generator!","Get all the money you ever dreamed of!!");
-  //cout << "#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#" << endl \
-       << "|                                                                   |" << endl \
-       << "|               Welcome to The Movie Money Generator!               |" << endl \
-       << "|              Get all the money you ever dreamed of!!              |" << endl \
-       << "|                                                                   |" << endl \
-       << "#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#" << endl << endl;
   //prompt for movie name or settings option
   cout << "Enter the name of a movie or enter 's' to change the settings: ";
   getline(cin >> ws, movie_name);
@@ -95,52 +86,3 @@ while (repeat == 'y'){
   return 0;
 }
 //END MAIN
-
-/*
-//Loops to get an integer, if a float is entered it will truncate and clear the stream
-void i_in(int *input){
-  cin >> *input;
-  while (cin.fail()){
-    cout << "Invalid, try again: ";
-    cin.clear();
-    cin.ignore(256,'\n');
-    cin >> *input;
-    }
-  cin.clear();
-  cin.ignore(256,'\n');
-}
-
-//Loops until a double/float is input
-void d_in(double *input){
-    cin >> *input;
-    while (cin.fail()){
-        cout << "Invalid, try again: " << endl;
-        cin.clear();
-        cin.ignore(256,'\n');
-        cin >> *input;
-        }
-}
-
-//Loops until a character that is within the given array is input
-void c_in(char *input, char check[], int array_size){
-    int i, b_check=0;
-    char temp;
-    while (true){
-        cin >> temp;
-        temp = tolower(temp);
-        for (i=0;i<array_size;i++){
-          if (temp == check[i]){
-            cin.clear();
-            cin.ignore(256,'\n');
-            b_check=1;
-            break;}}
-      if (b_check)
-        break;
-      else{
-          cin.clear();
-          cin.ignore(256,'\n');
-          cout << "Invalid entry, try agian: ";}
-    }
-    *input = temp;
-}
-*/
