@@ -40,7 +40,7 @@ int main(){
   //loop
   while (repeat == 'y'){
   //display
-    //display();
+    display("Math Tutor v7.77","For all your arithmatic needs!");
   //run tutor
     tutor(difficulty);
   //check loop
@@ -162,4 +162,3 @@ void s_i_in(int *input, int check[], int array_size){
     *input = temp;
 }
 */
-

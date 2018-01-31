@@ -85,31 +85,30 @@ void display(string line1, string line2){
 		b_string = line1.length();
 	else
 		b_string = line2.length();
-	
-	cout << "#";
+
+	cout << char(201);
 	for (int i = 0; i < b_string + 10; i++)
-		cout << "=";
-	cout << "#" << endl << "|";
+		cout << char(205);
+	cout << char(187) << endl << char(186);
 	for (int i = 0; i < b_string + 10; i++)
 		cout << " ";
-	cout << "|" << endl << "|";
+	cout << char(186) << endl << char(186);
 	for (int i = 0; i < (b_string - line1.length())/2 + 5; i++)
 		cout << " ";
 	cout << line1;
 	for (int i = 0; i < (b_string - line1.length())/2 + 5; i++)
 		cout << " ";
-	cout << "|" << endl << "|";
+	cout << char(186) << endl << char(186);
 	for (int i = 0; i < (b_string - line2.length())/2 + 5; i++)
 		cout << " ";
 	cout << line2;
 	for (int i = 0; i < (b_string - line2.length())/2 + 5; i++)
 		cout << " ";
-	cout << "|" << endl << "|";
+	cout << char(186) << endl << char(186);
 	for (int i = 0; i < b_string + 10; i++)
 		cout << " ";
-	cout << "|" << endl << "#";
+	cout << char(186) << endl << char(200);
 	for (int i = 0; i < b_string + 10; i++)
-		cout << "=";
-	cout << "#" << endl << endl;
+		cout << char(205);
+	cout << char(188) << endl << endl;
 }
-

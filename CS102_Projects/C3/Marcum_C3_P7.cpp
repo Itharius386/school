@@ -38,7 +38,8 @@ int main(){
 //main loop
 while (repeat == 'y'){
   //display
-  cout << "#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#" << endl \
+  display("Welcome to The Movie Money Generator!","Get all the money you ever dreamed of!!");
+  //cout << "#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#~@~#" << endl \
        << "|                                                                   |" << endl \
        << "|               Welcome to The Movie Money Generator!               |" << endl \
        << "|              Get all the money you ever dreamed of!!              |" << endl \
@@ -84,7 +85,7 @@ while (repeat == 'y'){
          << setw(25) << "Paid to Distributor:" << "$" << (gross_profit - retained_earn) << endl << endl;}
   //if they chose settings auto-loop to get movie title otherwise ask if they want to enter another
   if (movie_name != "s"){
-    cout << "Would you like to enter another movie?(y/n): ";
+    cout << "Would you like to enter another movie? (y/n): ";
     c_in(&repeat,re_check,2);}
     cin.clear();
   //clear the screen if they picked yes

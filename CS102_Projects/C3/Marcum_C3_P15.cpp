@@ -23,7 +23,7 @@ using namespace std;
 //prototypes
 //void d_in(double*);
 //void c_in(char*,char*,int);
-void display();
+//void display();
 void display_settings(double*, double*);
 
 //BEGIN MAIN
@@ -37,7 +37,7 @@ int main(){
   //enter main loop
   while (repeat == 'y'){
     //display banner
-    display();
+    display("Welcome to TAX SIM v1.3","We solve all property tax needs in one place!");
     //get property value
     cout << left << setw(35) << "\nEnter the Actual Property Value:" << "$";
     d_in(&property_value,1);
@@ -101,7 +101,7 @@ void c_in(char *input, char check[], int array_size){
     }
     *input = temp;
 }
-*/
+
 
 void display(){
   cout << "#----------------------------------------------------#" << endl \
@@ -109,7 +109,7 @@ void display(){
        << "|    We solve all property tax needs in one place!   |" << endl \
        << "#----------------------------------------------------#" << endl;
 
-}
+}*/
 
 void display_settings(double*assess,double*rate){
   cout << "$------------#---------Settings---------#------------$" << endl;

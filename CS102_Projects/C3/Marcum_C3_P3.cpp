@@ -21,14 +21,14 @@ using namespace std;
 //Prototypes
 //void i_in(int*);
 //void d_in(double*);
-void display();
+//void display();
 
 //BEGIN MAIN
 int main(){
   int max_num = 5, i =0;
   double average = 0, *test_score = new double[max_num];
 
-  display();
+  display("Welcome to the Grade'o'matic 9000.1","We calculate your average so you don't have to!");
 
   //get number of test scores to be entered
   cout << "How many test scores would you like to enter: ";
@@ -91,10 +91,11 @@ void d_in(double *input){
   cin.clear();
   cin.ignore(256,'\n');
 }
-*/
+
 //basic display
 void display(){
   cout << "#===========================================================================#" << endl \
        << "|                    Welcome to the Grade'o'matic 9000.1                    |" << endl \
        << "|              We calculate your average so you don't have to!              |" << endl \
        << "#===========================================================================#" << endl << endl;}
+*/
