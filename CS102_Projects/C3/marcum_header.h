@@ -5,6 +5,7 @@
 //============================
 //dependency headers
 #include <iostream>
+#include <string>
 using namespace std;
 //functions prototypes here
 
@@ -50,4 +51,16 @@ void i_in(int*, int = 0);
 //============================
 void s_i_in(int*, int*, int);
 
+//============================
+//
+//	display:  Provides basic display for a program, good for up to 2 lines
+//			  Recommended both lines have same even or odd number of characters
+//
+//	Arg1:	  string  first line to be printed
+//	Arg2:	  string  second line to be printed (defaults to blank, matches an even number of characters in Arg1)
+//
+//============================
+void display(string, string = "");
+
 #endif
+

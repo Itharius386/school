@@ -77,3 +77,39 @@ void s_i_in(int *input, int check[], int array_size){
     }
     *input = temp;
 }
+
+void display(string line1, string line2){
+
+	int b_string;
+	if (line1.length() > line2.length())
+		b_string = line1.length();
+	else
+		b_string = line2.length();
+	
+	cout << "#";
+	for (int i = 0; i < b_string + 10; i++)
+		cout << "=";
+	cout << "#" << endl << "|";
+	for (int i = 0; i < b_string + 10; i++)
+		cout << " ";
+	cout << "|" << endl << "|";
+	for (int i = 0; i < (b_string - line1.length())/2 + 5; i++)
+		cout << " ";
+	cout << line1;
+	for (int i = 0; i < (b_string - line1.length())/2 + 5; i++)
+		cout << " ";
+	cout << "|" << endl << "|";
+	for (int i = 0; i < (b_string - line2.length())/2 + 5; i++)
+		cout << " ";
+	cout << line2;
+	for (int i = 0; i < (b_string - line2.length())/2 + 5; i++)
+		cout << " ";
+	cout << "|" << endl << "|";
+	for (int i = 0; i < b_string + 10; i++)
+		cout << " ";
+	cout << "|" << endl << "#";
+	for (int i = 0; i < b_string + 10; i++)
+		cout << "=";
+	cout << "#" << endl << endl;
+}
+
