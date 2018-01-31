@@ -5,7 +5,7 @@
 //============================
 //dependency headers
 #include <iostream>
-
+using namespace std;
 //functions prototypes here
 
 //============================
@@ -49,4 +49,5 @@ void i_in(int*, int = 0);
 //
 //============================
 void s_i_in(int*, int*, int);
+
 #endif

@@ -14,6 +14,7 @@
 #include <iomanip>
 #include <string>
 #include "marcum_header.h"
+#include "marcum_header.cpp"
 //Namespace
 using namespace std;
 
@@ -106,4 +107,3 @@ void display(){
        << "|                    Welcome to the Grade'o'matic 9000.1                    |" << endl \
        << "|              We calculate your average so you don't have to!              |" << endl \
        << "#===========================================================================#" << endl << endl;}
-
