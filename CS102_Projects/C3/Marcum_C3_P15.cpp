@@ -26,7 +26,7 @@ void display_settings(double*, double*);
 //BEGIN MAIN
 int main(){
   //init variables
-  double  property_value = 10000, \
+  double  property_value, \
   assessed_value, assessed_rate = .6, \
   tax_rate = .75, tax_owed = 0;
   char repeat = 'y', re_check[] = {'y','n','s'};
@@ -36,7 +36,7 @@ int main(){
     //display banner
     display("Welcome to TAX SIM v1.3","We solve all property tax needs in one place!");
     //get property value
-    cout << left << setw(35) << "\nEnter the Actual Property Value:" << "$";
+    cout << left << setw(35) << endl << "Enter the Actual Property Value:" << "$";
     d_in(&property_value,1);
     //calculate assessed = 60% actual
     assessed_value = (property_value * assessed_rate);
@@ -46,7 +46,7 @@ int main(){
     cout << fixed << setprecision(2) << setw(35) << "Assessed Value of Property: " << "$" << assessed_value << endl \
          << setw(35) << "Total Taxes Owed:" << "$" << tax_owed << endl;
     //loop?
-    cout << "\nWould you like more taxes? (y/n or 's' for settings): ";
+    cout << "\nDo you have more property to assess? (y/n or 's' for settings): ";
     c_in(&repeat,re_check,3);
     if (repeat == 'y')
       system("CLS");

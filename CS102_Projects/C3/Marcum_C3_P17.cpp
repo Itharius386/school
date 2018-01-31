@@ -40,7 +40,7 @@ int main(){
   //run tutor
     tutor(difficulty);
   //check loop
-    cout << "Would you like to go again? (y/n or d to change difficulty): ";
+    cout << "\nWould you like to go again? (y/n or d to change difficulty): ";
     c_in(&repeat, re_check, 3);
     if (repeat == 'y')
       system("CLS");

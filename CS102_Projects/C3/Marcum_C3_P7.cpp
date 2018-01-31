@@ -23,6 +23,15 @@ using namespace std;
 
 //Prototypes
 
+//class
+//a movie can have a title, and number of Tickets sold
+//it won't have an individual price/ticket, as that is set by the theatre/distributor
+class Movie{
+  private:
+    string title;
+    int a_ticket_sold, c_ticket_sold, _3D;
+};
+
 //BEGIN MAIN
 int main(){
 //variable inits with default values
