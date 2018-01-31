@@ -23,18 +23,30 @@
 //namespace
 using namespace std;
 
+//Class
+class Nouns{
+  private:
+    string name_id, name;
+  public:
+    Nouns(string id, string str = ""){name_id = id; name = str;}
+    string getName(){return name;}
+    string getId(){return name_id;}
+    void setName(string str){name = str;}
+    void setId(string str){name_id = str;}
+};
+
 //prototypes
-void story_time(string);
-void lambda_char(char c);
+void char_per_tick(char);
+void string_reader(string);
 
 //BEGIN MAIN
 int main(){
   //Would have done it as a vector of pairs but was too far beyond what was needed to accomplish the project
   //basic vector of strings is enough - needed it for shuffling
   //0 name, 1 city, 2 age, 3 college, 4 job, 5 pet, 6 petname
-  vector<string> nouns(7);// = {"name","city","age","college","job","pet","petname"};
+  vector<string> nouns(7); //={"name","city","age","college","job","pet","petname"};
   //had to comment out the defaults and add '(7)' for initializing because quincy c++ std does not allow for '= {}' to initialize vectors
-
+  nouns.push_back("name",)
   //stringstream to put the entire story together as a single string
   stringstream story;
 
@@ -73,25 +85,24 @@ int main(){
        << ". " << endl << nouns[0] << " graduated and went to work as a(n) " << nouns[4] << ". Then, " << nouns[0] \
        << " adopted a(n) " << nouns[5] << " named " << nouns[6] << "." << endl << "They both lived happily ever after!\0";
   //Story time!
-  story_time(story.str());
+  string_reader(story.str());
 
   return 0;
 }
 //END MAIN
 
 
-//Story Time Function
-//make it print 1 letter at a time like someone is writing it out in front of you
-//iterate over the string from begin to end, lambda expression to take each character and output it followed by pause
-//It's important to put the stream into another string instead of converting it with story.str().begin() because it won't end
-//just put it in a function to clean up main
-
-void story_time(string story_str){
-  for_each(story_str.begin(), story_str.end(),lambda_char);
-}
-
 //Lambda functions don't exist in Quincy's std C++ package (min of C++11). had to make it it's own function
-//otherwise replace 'lambda_char' above with '[](char c){cout << c; Sleep(80);}' for the same effect without having to make a second named function call
-void lambda_char(char c){
+//otherwise replace 'char_per_tick' in string_reader with '[](char c){cout << c; Sleep(80);}' for the same effect without having to make a second named function call
+void char_per_tick(char c){
 cout << c;
 Sleep(80);}
+
+//Story Time Function - String reader
+//make it print 1 letter at a time like someone is writing it out in front of you
+//iterate over the string from begin to end, lambda expression to take each character and output it followed by pause
+//It's important to put the stream into another string instead of converting it with story.str().begin() because it won't end even with a \0
+//just put it in a function to clean up main
+void string_reader(string str){
+  for_each(str.begin(), str.end(),char_per_tick);
+}
