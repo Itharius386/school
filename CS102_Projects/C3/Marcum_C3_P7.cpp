@@ -30,7 +30,29 @@ class Movie{
   private:
     string title;
     int a_ticket_sold, c_ticket_sold, _3D;
+  public:
+    //construct
+    Movie(string name,int a_tic=0, c_tic=0){title = name; a_ticket_sold = a_tic; c_ticket_sold = c_tic;}
+    //get/set
+    string getTitle(){return title;}
+    int getATicket(){return a_ticket_sold;}
+    int getCTicket(){return c_ticket_sold;}
+    void setTitle(string name){title = name;}
+    void setATicket(int tic){a_ticket_sold = tic;}
+    void setCTicket(int tic){c_ticket_sold = tic;}
 };
+
+class Distributor{
+  private:
+
+}
+
+class Theatre{
+  private:
+    string theatre;
+    map<Distributor, Movie> showings;
+
+}
 
 //BEGIN MAIN
 int main(){
