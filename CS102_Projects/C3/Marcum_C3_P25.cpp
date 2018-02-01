@@ -23,6 +23,12 @@
 //namespace
 using namespace std;
 
+//prototypes
+void char_per_tick(char);
+void string_reader(string);
+bool is_vowel(string);
+
+
 //Class
 //technically not all nouns but close enough
 class Nouns{
@@ -37,14 +43,17 @@ class Nouns{
     string getId(){return name_id;}
     //set name or id, with input for the name from user
     void setName(){
-      cout << "Enter a(n) "<< name_id<<": ";
-      getline(cin,name);}
+      cout << "Enter a";
+	  if (is_vowel(name_id))
+	  	cout << "n ";
+	  else
+	    cout << " ";
+	  cout << name_id<<": ";
+      getline(cin >> ws,name);}
     void setId(string str){name_id = str;}
 };
 
-//prototypes
-void char_per_tick(char);
-void string_reader(string);
+
 
 //BEGIN MAIN
 int main(){
@@ -94,8 +103,16 @@ int main(){
   if (stor_type == 'b'){
     story<< "There once was a person named " << nouns[0].getName() << " who lived in " << nouns[1].getName() \
          << ". At the age of " << nouns[2].getName() << ", " << nouns[0].getName() << " went to college at " << nouns[3].getName() \
-         << ". " << nouns[0].getName() << " graduated and went to work as a(n) " << nouns[4].getName() << ". Then, " << nouns[0].getName() \
-         << " adopted a(n) " << nouns[5].getName() << " named " << nouns[6].getName() << ". They both lived happily ever after!";}
+         << ". " << nouns[0].getName() << " graduated and went to work as a";
+	if (is_vowel(nouns[4].getName()))
+		story<< "n";
+	story<< " " << nouns[4].getName() << ". Then, " << nouns[0].getName() \
+         << " adopted a";
+	if (is_vowel(nouns[5].getName()))
+		story<< "n";	   	    
+	story<<" " << nouns[5].getName() << " named " << nouns[6].getName() << ". They both lived happily ever after!";}
+  //it got a little ugly when I wanted to add the 'a' vs 'an' check
+  
   else { //okay less a horror and more just silly
     story<< "Once upon a time, a stranger named " << nouns[0].getName() << " appeared in the quiet city of " << nouns[1].getName() \
          << ". The gentle folk  of the town were mere " << nouns[4].getName() << "s who only wanted to live their lives in peace. " \
@@ -129,8 +146,8 @@ void string_reader(string str){
   int i,j;
   //loops over the string at console length (~80)
   //adds new line characters to increase readability automatically
-  for (i = 1; i < str.length()/80 + 1; i++){
-  for (j=i*80; j > 0; j--){
+  for (i = 1; i < str.length()/79 + 1; i++){
+  for (j=i*79; j > 0; j--){
     if (isspace(str[j])){
       str[j] = '\n';
       break;}}
@@ -139,3 +156,19 @@ void string_reader(string str){
   //see above for the function call on the print
   for_each(str.begin(), str.end(),char_per_tick);
 }
+
+//quick is_vowel check so I can do 'a' vs 'an' output because it bothered me
+bool is_vowel(string input) {
+	char c = input[0];
+    switch(tolower(c)) {
+    	case 'a':
+    	case 'e':
+    	case 'i':
+    	case 'o':
+    	case 'u':
+        	return true;
+    	default:
+        	return false;
+    }
+}
+

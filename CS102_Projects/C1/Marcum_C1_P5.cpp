@@ -1,4 +1,4 @@
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * b bh * * * * * * * * * * * * * * *
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  *                                                                                                 *
  *  Name: Poly Solver                                                                              *
  *  Author: James Marcum                                                                           *
@@ -32,24 +32,30 @@ class PolySolve{
         void setDegree(int poly_power){degree = poly_power;}
         //set coefficent at given power of x
         void set1Coeff(double value, int x){coeff[x] = value;}
+
         //returns f(x) as a string
         string getFunction(){
         stringstream ss;
         int i=0;
+        //f(x) base statement
         ss << "f(x) = ";
+        //for the length of the polynomial
         for (i=degree;i>=0;i--){
-                if (coeff[i] > 1 || coeff[i] < 0 || (i == 0 && coeff[i] != 0))
-                    {ss << coeff[i];}
-                if (i != 0 && coeff[i] != 0)
-                    {ss << 'x';
-                    if (i>1)
-                        ss << '^' << i;
-                    if ( i > 0)
-                        ss << " + ";}
+          //if not the max degree and the coeffient isn't 0 or less, print a '+'
+          if (i < degree && coeff[i] != 0)
+            ss << " + ";
+          //if the coeff isn't 1 but is greater than 0, print it, also if it's less than 0, and if it's x^0 and a non-zero number print it
+          if ((coeff[i] !=1 && coeff[i] > 0) || coeff[i] < 0 || (i == 0 && coeff[i] != 0))
+            ss << coeff[i];
+          //if its not the constant and the coeffient isn't 0, print an x
+          if (i != 0 && coeff[i] != 0){
+            ss << 'x';
+            //to the power of i if its 1 or more
+            if (i>1)
+              ss << '^' << i;}
         }
-        string f_x = ss.str();
-        return f_x;
-        }
+        return ss.str();}
+
         //returns degree of polynomial
         int getDegree()
         {return degree;}
@@ -177,3 +183,4 @@ void d_in(double *input){
         cin >> *input;
         }
 }
+

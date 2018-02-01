@@ -15,6 +15,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <vector>
 #include <windows.h>
 #include "marcum_header.h"
 #include "marcum_header.cpp"
@@ -24,33 +25,41 @@ using namespace std;
 //Prototypes
 
 //class
-//a movie can have a title, and number of Tickets sold
+//a movie has a title, and can reference the number of Tickets sold
+//Also can be 3D for a theatre surcharge, and has a rating for analytic purpose
 //it won't have an individual price/ticket, as that is set by the theatre/distributor
 class Movie{
   private:
     string title;
-    int a_ticket_sold, c_ticket_sold, _3D;
+    int a_ticket_sold, c_ticket_sold, is3D, rating;
   public:
-    //construct
-    Movie(string name,int a_tic=0, c_tic=0){title = name; a_ticket_sold = a_tic; c_ticket_sold = c_tic;}
-    //get/set
+    //constructor
+    Movie(string name,int a_tic=0, c_tic=0, _3d=0, rated=3)
+      {title = name; a_ticket_sold = a_tic; c_ticket_sold = c_tic; is3D = _3d, rated = rating}
+    //gets
     string getTitle(){return title;}
     int getATicket(){return a_ticket_sold;}
     int getCTicket(){return c_ticket_sold;}
+    int get3D(){return is3D;}
+    int getRating(){return rating;}
+    //what is better: having them take the input as an arguement or have them with 0 arguements and call for their own input with input checking built in to prevent user error?
     void setTitle(string name){title = name;}
     void setATicket(int tic){a_ticket_sold = tic;}
     void setCTicket(int tic){c_ticket_sold = tic;}
+    void set3D(int set){is3D = set;}
+    void setRating(int set){rating = set;}
 };
 
-class Distributor{
-  private:
-
-}
 
 class Theatre{
   private:
     string theatre;
-    map<Distributor, Movie> showings;
+    vector<Movie> showings;
+    double adult_tix_price, child_tix_price, charge_3D \
+          retained_percent;
+  public:
+    Theatre(string name = "The Best Theatre You Never Saw", double ap = 10, double cp = 6, double D3 = 3){theatre = name; adult_tix_price = ap; child_tix_price = cp; charge_3D = D3;}
+    void addShowing(string title){showings.push_back(Movie(title));}
 
 }
 
@@ -67,8 +76,11 @@ int main(){
 while (repeat == 'y'){
   //display
   display("Welcome to The Movie Money Generator!","Get all the money you ever dreamed of!!");
+  //Get their Theatre's name
+  //getline(cin >>)
   //prompt for movie name or settings option
   cout << "Enter the name of a movie or enter 's' to change the settings: ";
+  //cin >> ws fixes my cin to getline issue of \n being left in the stream if you go to settings, and gets rid of leading whitespace :D
   getline(cin >> ws, movie_name);
   //if settings, change settngs (Limits options - Can't name a movie 's')
   if (movie_name == "s") {

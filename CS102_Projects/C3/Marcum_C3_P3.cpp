@@ -24,7 +24,7 @@ using namespace std;
 //BEGIN MAIN
 int main(){
   int max_num = 5, i =0;
-  double average = 0, *test_score = new double[max_num];
+  double average = 0, *test_score = NULL;
 
   display("Welcome to the Grade'o'matic 9000.1","We calculate your average so you don't have to!");
 
