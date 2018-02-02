@@ -89,10 +89,10 @@ int main(){
     display("Welcome to Story Time Adventures!","Follow the prompts for a story!");
 
   }
-  //big ol' set block for names
+  //big ol' loop to set the names
   for (int i = 0; i < 7; i++)
     nouns[i].setName();
-  //if the users name was random, get another name and shuffle the vector
+  //if random is set shuffle the vector
   if (rand_set == 'y'){
     random_shuffle(nouns.begin(),nouns.end());
   }
@@ -137,15 +137,15 @@ cout << c;
 Sleep(80);}
 
 //Story Time Function - String reader
-//make it print 1 letter at a time like someone is writing it out in front of you
+//make it print 1 letter at a time like someone is writing it
 //iterate over the string from begin to end, lambda expression to take each character and output it followed by pause
-//It's important to put the stream into another string instead of converting it with story.str().begin() because it won't end even with a \0
+//Put the stream into another string instead of converting it with story.str() and using .begin() because it won't .end() even with a \0
 //just put it in a function to clean up main
 void string_reader(string str){
   //inits looping ints
   int i,j;
-  //loops over the string at console length (~80)
-  //adds new line characters to increase readability automatically
+  //loops over the string at console length (80 for windows prior to windows10, then we can just make the console bigger)
+  //adds the new line characters to increase readability automatically
   for (i = 1; i < str.length()/79 + 1; i++){
   for (j=i*79; j > 0; j--){
     if (isspace(str[j])){
@@ -153,7 +153,7 @@ void string_reader(string str){
       break;}}
   }
   //actual itteration over the string to print it
-  //see above for the function call on the print
+  //see above for the function call used by iteration
   for_each(str.begin(), str.end(),char_per_tick);
 }
 

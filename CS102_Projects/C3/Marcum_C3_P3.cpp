@@ -9,7 +9,9 @@
  *                                                                                         *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-//Super Simple Stuff
+//Some Super Simple Stuff
+//this time anyway...
+
 //Headers
 #include <iostream>
 #include <iomanip>
@@ -62,3 +64,4 @@ int main(){
   return 0;
 }
 //END MAIN
+

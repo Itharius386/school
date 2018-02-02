@@ -68,20 +68,20 @@ int tutor(int dif){
   int num1, num2, ops = rand()%dif + 1, remain = 0;
   double ans = 0;
   //set numbers = to a random number with respect to a power of the difficulty
-  //Had to static_cast (dif) to get it to compile in Quincy, had to use 10.0 instead of 10 because of overload ambiguity
-  //static_cast on the result because of modulus only working with int values
+  //Had to static_cast (dif) to get it to compile in Quincy, had to use 10.0 instead of 10 because of overloaded function ambiguity
+  //static_cast on the result because of modulus only working with int values and C++ considers pow to be binary type
   num1 = rand()%static_cast<int>(pow(10.0,static_cast<int>(dif))) + 1;
   //added in checks for lunatic difficulty to help prevent E powered answers
   //added for division to prevent constant 0 answers with everthing in Remainder
-  if (ops == 3 && dif == 4)
+  if (ops == 3 && dif == 4) //multiplication on lunitic
     num2 = rand()%1000 + 1;
-  else if (ops == 4)
+  else if (ops == 4) //any division
     num2 = rand()%500 + 1;
-  else
+  else //all other situations
     num2 = rand()%static_cast<int>(pow(10.0,static_cast<int>(dif))) + 1;
   //output num1
   cout<< setw(12) << num1 << endl;
-  //determine which operation will take place, priint it and calculate the answer
+  //print the operation and do the calculation
   switch(ops){
     case(1): cout << " +"; ans = num1 + num2; break;
     case(2): cout << " -"; ans = num1 - num2; break;
@@ -95,9 +95,10 @@ int tutor(int dif){
   cin.get();
   //show answer
   cout<< setw(12) << setprecision(10) << ans;
-  if (ops == 4)
+  if (ops == 4) //if division show remainder
     cout << " R " << remain;
   cout << endl;
-  //return success
+  //return 1 because maybe I want that
   return 1;
 }
+

@@ -38,7 +38,7 @@ class Movie{
     //constructor - with no arguements acts as a 'wizard' and walksthrough building the showing
     Movie(){
         int r_check[]={1,2,3,4,5}, d_check[] = {0,1};
-        cout << "Enter the title: ";
+        cout << "Enter the title (21 character max): ";
         getline(cin >> ws,title);
         cout << "Enter # of Adult Tickets sold: ";
         i_in(&a_ticket_sold,1);
@@ -52,7 +52,7 @@ class Movie{
       {title = name; a_ticket_sold = a_tic; c_ticket_sold = c_tic; is3D = _3d; rated = rating;}
     //what is better: having them take the input as an arguement or have them with 0 arguements and call for their own input with input checking built in to prevent user error?
     void setTitle(){
-        cout << "Enter the title: ";
+        cout << "Enter the title (21 character max): ";
         getline(cin >> ws,title);}
     void setATicket(){
         cout << "Enter # of Adult Tickets sold: ";
@@ -96,8 +96,8 @@ class Movie{
 int main(){
 //variable inits with default values
     double a_tic_cost = 10, c_tic_cost = 6, retained_percent = .2, surcharge3D = 3, \
-        profit = 0, t_gross_profit = 0, retained_earn = 0, t_retained = 0;
-    int num_rep,i;
+        profit = 0, t_gross_profit = 0, retained_earn = 0, t_retained = 0, avg_rate = 0;
+    int num_rep, i, t_aTix=0, t_cTix=0;
     string title;
     vector<Movie> showing;
 //loop checks
@@ -147,8 +147,25 @@ int main(){
         retained_earn = profit * retained_percent;
         t_gross_profit += profit;
         t_retained += retained_earn;
-        cout << setw(21) << showing[i].getTitle() << setw(6) << showing[i].showRating() << setw(3) << showing[i].show3D() << setw(8) << showing[i].getATicket() << setw(8) << showing[i].getCTicket() << "$" << setw(9) << profit << "$" << setw(9) << retained_earn << "$" << setw(11) << profit - retained_earn << endl;
+		t_aTix += showing[i].getATicket();
+		t_cTix += showing[i].getCTicket();
+		avg_rate += showing[i].getRating();
+		//Massive cout for each row
+        cout<< setw(21) << showing[i].getTitle() << setw(6) << showing[i].showRating() \
+			<< setw(3) << showing[i].show3D() << setw(8) << showing[i].getATicket() \
+			<< setw(8) << showing[i].getCTicket() << "$" << setw(9) << profit << "$" \
+			<< setw(9) << retained_earn << "$" << setw(11) << profit - retained_earn << endl;
     }
+	avg_rate /= num_rep;
+	for (int j = 0; j < 80; j++)
+        cout << "_";
+	cout << endl;
+	cout<< setw(21) << "Total:" << setw(6) << setprecision(1) << avg_rate \
+		<< setw(3) << " " << setw(8) << setprecision(2) << t_aTix \
+		<< setw(8) << t_cTix << "$" << setw(9) << t_gross_profit << "$" \
+		<< setw(9) << t_retained << "$" << setw(11) << t_gross_profit - t_retained << endl;
+
   return 0;
 }
 //END MAIN
+
