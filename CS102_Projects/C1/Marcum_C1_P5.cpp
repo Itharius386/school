@@ -183,4 +183,3 @@ void d_in(double *input){
         cin >> *input;
         }
 }
-
