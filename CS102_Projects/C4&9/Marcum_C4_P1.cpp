@@ -10,6 +10,7 @@
 //header
 #include <iostream>
 #include <iomanip>
+#include <windows.h>
 #include "marcum_header.h"
 #include "marcum_header.cpp"
 
@@ -57,3 +58,4 @@ int main(){
     return 0;
 }
 //END MAIN
+

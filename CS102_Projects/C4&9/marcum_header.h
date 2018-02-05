@@ -6,6 +6,7 @@
 //dependency headers
 #include <iostream>
 #include <string>
+#include <windows.h>
 using namespace std;
 //functions prototypes here
 
