@@ -172,13 +172,13 @@ void s_i_in(int *input, int check[], int array_size){
 //	Arg1:	  string  first line to be printed
 //	Arg2:	  string  second line to be printed (defaults to blank, matches an even number of characters in Arg1)
 //============================
-void display(string line1, string line2, int color){
+void display(string line1, string line2){
 	int b_string; //determines which of the 2 lines is longer for width consideration
 	if (line1.length() > line2.length())
 		b_string = line1.length();
 	else
 		b_string = line2.length();
-    setcolor(color);
+
 	cout << char(201); //print corner
 	for (int i = 0; i < b_string + 10; i++)
 		cout << char(205); //print width
@@ -204,5 +204,4 @@ void display(string line1, string line2, int color){
 	for (int i = 0; i < b_string + 10; i++)
 		cout << char(205);//final width
 	cout << char(188) << endl << endl;//last corner and endl twice
-    setcolor();
 }

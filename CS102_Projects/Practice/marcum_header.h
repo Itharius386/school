@@ -50,9 +50,8 @@ void s_i_in(int*, int*, int);
 //
 //	Arg1:	  string  first line to be printed
 //	Arg2:	  string  second line to be printed (defaults to blank, matches an even number of characters in Arg1)
-//  Arg3:     into    color of text
 //============================
-void display(string, string = "",int = 7);
+void display(string, string = "");
 
 
 #endif
