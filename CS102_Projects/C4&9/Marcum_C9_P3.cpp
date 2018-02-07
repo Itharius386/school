@@ -33,8 +33,8 @@ class Test{
         double getGrade(){return grade;}//gets grade
         char getLetter(){//gets letter, also colored
             switch(static_cast<int>(grade)/10){
-                case(0):case(1):case(2):case(3):case(4):case(5): setcolor(64); return 'F';
-                case(6): setcolor(4); return 'D';
+                case(0):case(1):case(2):case(3):case(4):case(5): setcolor(192); return 'F';
+                case(6): setcolor(12); return 'D';
                 case(7): setcolor(2); return 'C';
                 case(8): setcolor(9); return 'B';
                 default: setcolor(14); return 'A';}}
@@ -78,12 +78,12 @@ for (i=0; i < max_num; i++){
     cout << "Enter value for test #" << i+1 << ": ";
     d_in(&temp_test_num,1);
     (test_score + i)->setGrade(temp_test_num);}// '->' to reference member without subscripting
-	
+
 sort(test_score,test_score + max_num, compare);//sort test scores
 
 average = testavg(test_score,max_num);//calculate average
 
-setcolor(10);
+setcolor(2);
 cout << endl << left << setw(6) << "Score" << setw(8) << "Grade";//column names
 if (named == 'y')
     cout<< setw(26) << "Name";
@@ -103,15 +103,18 @@ setcolor();
 //tell average and grade average
 cout << "\nThe average test score is ";
 setcolor(15);
-cout << fixed << setprecision(1) << average << endl;
+cout << fixed << setprecision(1) << average;
 setcolor();
-cout << "The letter grade on average is a(n) ";
-setcolor(12);
+if (max_num > 1)
+    cout << " after dropping the lowest score";
+cout << endl;
+setcolor();
+cout << "The letter grade on average is ";
 //cast the average as an int and divide by 10 to get an int to give it a grade
 //grade scale of 90+ A, 80-89 B, 70-79 C, 60-69 D, 0-59 F
 switch(static_cast<int>(average/10)){
-    case(0):case(1):case(2):case(3):case(4):case(5): setcolor(64); cout << 'F'; break;
-    case(6): setcolor(4); cout << 'D'; break;
+    case(0):case(1):case(2):case(3):case(4):case(5): setcolor(192); cout << 'F'; break;
+    case(6): setcolor(12); cout << 'D'; break;
     case(7): setcolor(2); cout << 'C'; break;
     case(8): setcolor(9); cout << 'B'; break;
     default: setcolor(14); cout << 'A';}

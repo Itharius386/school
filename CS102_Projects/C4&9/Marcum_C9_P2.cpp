@@ -35,8 +35,8 @@ class Test{
         double getGrade(){return grade;}//gets grade
         char getLetter(){//gets letter, also colored
             switch(static_cast<int>(grade)/10){
-                case(0):case(1):case(2):case(3):case(4):case(5): setcolor(64); return 'F';
-                case(6): setcolor(4); return 'D';
+                case(0):case(1):case(2):case(3):case(4):case(5): setcolor(192); return 'F';
+                case(6): setcolor(12); return 'D';
                 case(7): setcolor(2); return 'C';
                 case(8): setcolor(9); return 'B';
                 default: setcolor(14); return 'A';}}
@@ -111,12 +111,11 @@ setcolor(15);
 cout << fixed << setprecision(1) << average << endl;
 setcolor();
 cout << "The average letter grade is a(n) ";
-setcolor(12);
 //cast the average as an int and divide by 10 to get an int to give it a grade
 //grade scale of 90+ A, 80-89 B, 70-79 C, 60-69 D, 0-59 F
 switch(static_cast<int>(average/10)){
-    case(0):case(1):case(2):case(3):case(4):case(5): setcolor(64); cout << 'F'; break;
-    case(6): setcolor(4); cout << 'D'; break;
+    case(0):case(1):case(2):case(3):case(4):case(5): setcolor(192); cout << 'F'; break;
+    case(6): setcolor(12); cout << 'D'; break;
     case(7): setcolor(2); cout << 'C'; break;
     case(8): setcolor(9); cout << 'B'; break;
     default: setcolor(14); cout << 'A';}
