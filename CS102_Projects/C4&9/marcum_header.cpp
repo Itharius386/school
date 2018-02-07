@@ -24,6 +24,7 @@ void ohandle(HANDLE *screen){
 //
 //  0=Black, 1=Blue, 2=Green, 3=Cyan, 4=Red, 5=Purple, 6=Yellow, 7=White
 //  8-15=Bright of above
+//	Then it cycles through background colors, 256 combinations total
 //
 //============================
 void setcolor(int color=7){
@@ -206,3 +207,4 @@ void display(string line1, string line2, int color){
 	cout << char(188) << endl << endl;//last corner and endl twice
     setcolor();
 }
+

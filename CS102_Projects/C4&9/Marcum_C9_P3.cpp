@@ -7,6 +7,7 @@
  *                                                                                         *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+//Basically the same as the other one, except more logic in the testavg function
 //Headers
 #include <iostream>
 #include <iomanip>
@@ -73,13 +74,15 @@ for (i=0; i < max_num; i++){
         setcolor(15);
         getline(cin >> ws,stu_name);
         setcolor();
-        (test_score + i)->setStudent(stu_name);}// '->' to reference member without subscripting
+        (test_score + i)->setStudent(stu_name);}
     cout << "Enter value for test #" << i+1 << ": ";
-    d_in(&temp_test_num,1);//pointer without subscripting, also the function doesn't use any subscripting either
+    d_in(&temp_test_num,1);
     (test_score + i)->setGrade(temp_test_num);}// '->' to reference member without subscripting
+	
 sort(test_score,test_score + max_num, compare);//sort test scores
 
 average = testavg(test_score,max_num);//calculate average
+
 setcolor(10);
 cout << endl << left << setw(6) << "Score" << setw(8) << "Grade";//column names
 if (named == 'y')
@@ -122,9 +125,12 @@ return 0;
 //Just your average function
 double testavg(Test *scores, int max){
     double average = 0;
-    for (int i = 1; i < max; i++)
-        average += (scores + i)->grade;
-    average /= max-1;
+	if (max > 1){//if there is more than 1 grade entered
+    	for (int i = 1; i < max; i++)
+			average += (scores + i)->grade;
+    	average /= max-1;}
+	else//they entered 1 or 0 grades and just return that value
+		average = scores->grade;
     return average;
 }
 
@@ -133,3 +139,4 @@ bool compare(const Test &a, const Test &b)
 {
     return a.grade < b.grade;
 }
+

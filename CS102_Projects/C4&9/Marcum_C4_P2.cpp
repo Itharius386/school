@@ -11,6 +11,7 @@
 //so I stopped at 1000
 //header
 #include <iostream>
+#include <iomanip>
 #include "marcum_header.h"
 #include "marcum_header.cpp"
 #include <string>
@@ -78,24 +79,26 @@ int main(){
     Roman *roman_ptr = NULL;
 
     display("Integer to Roman Numeral Convertion vIV","Keep it below 1,000 Edition",8); //display
-    cout <<"How many integers do you want to convert: ";
+    
+	cout <<"How many integers do you want to convert: ";//prompt
     i_in(&loop,1);
-    roman_ptr = new Roman[loop];
-    do{
+    roman_ptr = new Roman[loop];//it's them pointer things I've been hearing about
+    
+	do{
         cout << "Enter an integer between 1-1000 to convert: "; //prompt
         do{
             i_in(&number,1); // positives only
             if (number < 1 || number > 1000) //if not in range, prompt and loop
                 cout << "\aNumber must be between 1-1000, try again: ";
         } while(number < 1 || number > 1000);
-        (roman_ptr+i)->setNum(number);
-        loop--;
-        i++;
+        (roman_ptr+i)->setNum(number);//set that array object to the number
+        loop--;//decrement
+        i++;//increment
     }while(loop);
-
-    for (loop = 0; loop < i; loop++){
+	cout << endl;
+    for (loop = 0; loop < i; loop++){//now in reverse
     setcolor(14);
-    cout << (roman_ptr+loop)->getNum();
+    cout << setw(3) << (roman_ptr+loop)->getNum();
     setcolor();
     cout << " is ";
     setcolor(12);
@@ -105,3 +108,4 @@ int main(){
     return 0;
 }
 //END MAIN
+
