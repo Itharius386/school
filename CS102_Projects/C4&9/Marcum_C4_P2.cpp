@@ -37,7 +37,7 @@ class Roman{
                     case(2): roman << "MM"; break;
                     case(3): roman << "MMM"; break;
                     case(4): roman << "MMMM"; break;}}
-            if (number/100 != 0){//get the 100's place if needed
+            if (number/100%10 != 0){//get the 100's place if needed
                 switch(number/100%10){
                     case(1): roman << "C"; break;
                     case(2): roman << "CC"; break;
@@ -85,7 +85,7 @@ int main(){
     i_in(&loop,1);
     roman_ptr = new Roman[loop];//it's them pointer things I've been hearing about
 
-	do{
+	while(loop){
         cout << "Enter an integer between 1-4999 to convert: "; //prompt
         do{
             i_in(&number,1); // positives only
@@ -95,11 +95,11 @@ int main(){
         (roman_ptr+i)->setNum(number);//set that array object to the number
         loop--;//decrement
         i++;//increment
-    }while(loop);
+    };
 	cout << endl;
     for (loop = 0; loop < i; loop++){//now in reverse
     setcolor(14);
-    cout << setw(3) << (roman_ptr+loop)->getNum();
+    cout << setw(4) << (roman_ptr+loop)->getNum();
     setcolor();
     cout << " is ";
     setcolor(12);

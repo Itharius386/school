@@ -19,6 +19,7 @@
 using namespace std;
 
 //prototype
+long fibonacci(int num, int* mem);
 
 //class for XY pair
 class XYRelation{
@@ -64,3 +65,8 @@ int main(){
 }
 //END MAIN
 
+long fibonacci(int num, int* mem){
+    if ((mem - num) == -1)
+        (mem+num) = fibonacci(num-1, mem) + fibonacci(num-2,mem);
+    return *(mem+num);
+}
