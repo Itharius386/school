@@ -83,7 +83,7 @@ sort(test_score,test_score + max_num, compare);//sort test scores
 
 average = testavg(test_score,max_num);//calculate average
 
-setcolor(2);
+setcolor(11);
 cout << endl << left << setw(6) << "Score" << setw(8) << "Grade";//column names
 if (named == 'y')
     cout<< setw(26) << "Name";
@@ -129,17 +129,15 @@ return 0;
 double testavg(Test *scores, int max){
     double average = 0;
 	if (max > 1){//if there is more than 1 grade entered
-    	for (int i = 1; i < max; i++)
+    	for (int i = 1; i < max; i++)//i start at 1 to not count the lowest grade
 			average += (scores + i)->grade;
     	average /= max-1;}
-	else//they entered 1 or 0 grades and just return that value
+	else//they entered 1 grade and just return that value
 		average = scores->grade;
     return average;
 }
 
 //compare function for sorting the Test class
-bool compare(const Test &a, const Test &b)
-{
-    return a.grade < b.grade;
+bool compare(const Test &a, const Test &b){
+    return a.grade < b.grade;//flipping the '<' to '>' will change from ascending to descending
 }
-

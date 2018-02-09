@@ -31,7 +31,7 @@ class Test{
         string student_name;
     public:
         Test(){grade = 0; student_name = " ";}//default constructor
-        Test(double num, string name = " "){grade = num; student_name = name;}//unused in this program
+        Test(double num, string name = " "){grade = num; student_name = name;}
         double getGrade(){return grade;}//gets grade
         char getLetter(){//gets letter, also colored
             switch(static_cast<int>(grade)/10){
@@ -61,7 +61,7 @@ display("Welcome to the Grade'o'matic v9.86","We calculate your average so you d
 
 //prompt to add student names
 cout << "Would you like to add student names? (y/n): ";
-c_in(&named,named_check,2); //okay so this still uses indexing, but it's only used for the extra name checking
+c_in(&named,named_check,2); //okay so this still uses indexing, but it's only used for the name checking which is extra anyway
 //get number of test scores
 cout << "How many test scores would you like to enter: ";
 i_in(&max_num,1); //pointers inside
@@ -80,7 +80,7 @@ for (i=0; i < max_num; i++){
     cout << "Enter value for test #" << i+1 << ": ";//get test score
     d_in(&temp_test_num,1);
     (test_score + i)->setGrade(temp_test_num);}// '->' to reference member without subscripting
-	
+
 sort(test_score,test_score + max_num, compare);//sort test scores
 
 average = testavg(test_score,max_num);//calculate average
@@ -95,8 +95,6 @@ setcolor(11);
 for(int j=0;j<80;j++)
     cout << "_"; //line
 cout << endl;
-
-
 for(i=0; i < max_num; i++){//output scores loop
     setcolor(15);
     cout << setw(6) << (test_score+i)->getGrade(); //score
@@ -136,8 +134,6 @@ double testavg(Test *scores, int max){
 }
 
 //compare function for sorting the Test class
-bool compare(const Test &a, const Test &b)
-{
+bool compare(const Test &a, const Test &b){
     return a.grade < b.grade;//flipping the '<' to '>' will change from ascending to descending
 }
-

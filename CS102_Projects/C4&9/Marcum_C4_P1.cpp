@@ -7,7 +7,7 @@
  *                                                                                         *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-//It's hard to figure out ways that numbers are directly related
+//It's hard to figure out ways that 2 semi-random numbers would be related for no reason
 //header
 #include <iostream>
 #include <iomanip>
@@ -19,7 +19,7 @@
 using namespace std;
 
 //prototype
-long fibonacci(int num, int* mem);
+unsigned long long fibber(int);
 
 //class for XY pair
 class XYRelation{
@@ -27,8 +27,8 @@ class XYRelation{
         double x, y;
     public:
         XYRelation(double num1,double num2){x = num1; y = num2;} //construct the relationship
-        double X(){return x;}//get x
-        double Y(){return y;}//get y
+        double getX(){return x;}//get x
+        double getY(){return y;}//get y
         double Bigger(){ //get bigger
             if (x > y)
                 return x;
@@ -38,12 +38,12 @@ class XYRelation{
                 return x;
             return y;}
         double Distance(){return Bigger() - Smaller();} //get Distance
-
 };
 
 //BEGIN MAIN
 int main(){
     double number1, number2;
+    unsigned long long fibbed;
     display("Numerical Relationship Helper v0.2","Helping you understand the relationship between your numbers",11); //display
     cout << "Enter the first number: ";//get the first number - allows negative
     d_in(&number1);
@@ -51,22 +51,36 @@ int main(){
     d_in(&number2);
 
     XYRelation pair(number1,number2); //Make the pair
-
-    cout << fixed << setprecision(2); //limit to 2 decimal places for floats
+    cout << endl;
     if (pair.Distance() == 0){ //if same
         cout << "The numbers you entered are the same." << endl;
         cout << pair.Bigger() << " is the same as " << pair.Smaller();}
     else{
     cout << pair.Bigger() << " is the larger number." << endl; //Bigger
-    cout << pair.Smaller() << " is the smaller number." << endl; // Smaller
-    cout << pair.Smaller() << " is " << pair.Distance() << " units away from " << pair.Bigger() << " on a number line." << endl;} //Distance
-
+    cout << pair.Smaller() << " is the smaller number." << endl << endl; // Smaller
+    cout << pair.Smaller() << " is " << pair.Distance() << " units away from " \
+    << pair.Bigger() << " on a number line." << endl << endl;} //Distance
+    //Why 1-93 inclusive? Because that's all my unsigned long long will hold
+    //Also truncates for floats and goes with the floored int
+    if (pair.getX() < 94 && pair.getX() > 0){
+        fibbed = fibber(number1);
+        cout << fibbed << " is #" << static_cast<int>(pair.getX()) << " in the fibonacci Sequence." << endl;}
+    if (pair.getY() < 94 && pair.getY() > 0){
+        fibbed = fibber(number2);
+        cout << fibbed << " is #" << static_cast<int>(pair.getY()) << " in the fibonacci Sequence." << endl;}
     return 0;
 }
 //END MAIN
 
-long fibonacci(int num, int* mem){
-    if ((mem - num) == -1)
-        (mem+num) = fibonacci(num-1, mem) + fibonacci(num-2,mem);
-    return *(mem+num);
+//did you know: unsigned long longs will only hold fibonacci numbers to 93?
+//Also iterative instead of recursive, because fun
+unsigned long long fibber(int number){
+unsigned long long current = 1, previous = 0, next = 0;
+int i = 2; //starts at 2 because 1 and 2 are 1
+while (i <= number){//it mostly explains itself
+    next = previous + current;
+    previous = current;
+    current = next;
+    i++;}
+    return current;
 }
