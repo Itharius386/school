@@ -7,8 +7,6 @@
  *                                                                                         *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-//getting into the high 1000's is hard because then they switch to a notation with lines above the letters
-//so I stopped at 1000
 //header
 #include <iostream>
 #include <iomanip>
@@ -33,11 +31,14 @@ class Roman{
         int getNum(){return number;} //get
         void setNum(int num){number = num;} //set
         string getRoman(){
-            if (number == 1000){//if it's 1000 set as M and return
-                roman << "M";
-                return roman.str();}
-            if (number / 100 != 0){//get the 100's place if needed
-                switch(number/100){
+            if (number >= 1000){//if it's 1000 set as M and return
+                switch(number/1000){
+                    case(1): roman << "M"; break;
+                    case(2): roman << "MM"; break;
+                    case(3): roman << "MMM"; break;
+                    case(4): roman << "MMMM"; break;}}
+            if (number/100 != 0){//get the 100's place if needed
+                switch(number/100%10){
                     case(1): roman << "C"; break;
                     case(2): roman << "CC"; break;
                     case(3): roman << "CCC"; break;
@@ -78,19 +79,19 @@ int main(){
     int number,loop=0,i=0;
     Roman *roman_ptr = NULL;
 
-    display("Integer to Roman Numeral Convertion vIV","Keep it below 1,000 Edition",8); //display
-    
+    display("Integer to Roman Numeral Convertion vIV","Keep it below 5,000 Edition",8); //display
+
 	cout <<"How many integers do you want to convert: ";//prompt
     i_in(&loop,1);
     roman_ptr = new Roman[loop];//it's them pointer things I've been hearing about
-    
+
 	do{
-        cout << "Enter an integer between 1-1000 to convert: "; //prompt
+        cout << "Enter an integer between 1-4999 to convert: "; //prompt
         do{
             i_in(&number,1); // positives only
-            if (number < 1 || number > 1000) //if not in range, prompt and loop
-                cout << "\aNumber must be between 1-1000, try again: ";
-        } while(number < 1 || number > 1000);
+            if (number < 1 || number > 4999) //if not in range, prompt and loop
+                cout << "\aNumber must be between 1-4999, try again: ";
+        } while(number < 1 || number > 4999);
         (roman_ptr+i)->setNum(number);//set that array object to the number
         loop--;//decrement
         i++;//increment
@@ -108,4 +109,3 @@ int main(){
     return 0;
 }
 //END MAIN
-
