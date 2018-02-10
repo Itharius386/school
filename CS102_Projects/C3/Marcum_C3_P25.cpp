@@ -58,7 +58,7 @@ class Nouns{
 //BEGIN MAIN
 int main(){
   //0 name, 1 city, 2 age, 3 college, 4 job, 5 pet, 6 petname by default
-  vector<Nouns> nouns; //={"name","city","age","college","job","pet","petname"};
+  vector<Nouns> nouns;//={"name","city","age","college","job","pet","petname"};
   //had to comment out the defaults for initializing because quincy c++ std does not allow for easy initialization of vectors
   //init of vector with Nouns objects with Ids - because quincy makes me have to do it the ugly way
   nouns.push_back(Nouns("name"));
@@ -109,10 +109,10 @@ int main(){
 	story<< " " << nouns[4].getName() << ". Then, " << nouns[0].getName() \
          << " adopted a";
 	if (is_vowel(nouns[5].getName()))
-		story<< "n";	   	    
+		story<< "n";
 	story<<" " << nouns[5].getName() << " named " << nouns[6].getName() << ". They both lived happily ever after!";}
   //it got a little ugly when I wanted to add the 'a' vs 'an' check
-  
+
   else { //okay less a horror and more just silly
     story<< "Once upon a time, a stranger named " << nouns[0].getName() << " appeared in the quiet city of " << nouns[1].getName() \
          << ". The gentle folk  of the town were mere " << nouns[4].getName() << "s who only wanted to live their lives in peace. " \
@@ -171,4 +171,3 @@ bool is_vowel(string input) {
         	return false;
     }
 }
-
