@@ -1,6 +1,25 @@
-/*Word Separator
-Write a program that accepts as input a sentence in which all of the words are run
-together, but the first character of each word is uppercase. Convert the sentence to a
-string in which the words are separated by spaces and only the first word starts with
-an uppercase letter. For example the string “StopAndSmellTheRoses.” would be converted
-to “Stop and smell the roses.”*/
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *                                                                                         *
+ *    Author: James Marcum                                                                 *
+ *    Class:  CS102                                                                        *
+ *                                                                                         *
+ *    Function: Takes in a string of words without spaces, and produces a sentence         *
+ *              I can't think of a easier way to explain it                                *
+ *                                                                                         *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include "marcum_header.h"
+#include "marcum_header.cpp"
+
+int main(){
+    string wordswordswords = "";
+    display("Sentence Fixer 1.01","Fixing your poorly written sentences since 2018");
+    setcolor(2)
+    cout << "Enter a sentence without spaces, but capitalize each word." << endl \
+    "Ex: TheQuickBrownFoxJumpedOverTheLazyDog" << endl;
+    setcolor();
+    return 0;
+}
