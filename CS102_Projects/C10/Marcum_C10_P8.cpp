@@ -6,12 +6,15 @@
  *    Function: Sum the digits of a String                                                 *
  *                                                                                         *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+//simple this time
+//fun with vectors of strings
 
 //header
 #include <iostream>
 #include <iomanip>
 #include <string>
 #include <algorithm>
+#include <vector>
 #include "marcum_header.h"
 #include "marcum_header.cpp"
 //namespace
@@ -20,39 +23,49 @@ using namespace std;
 //prototype
 bool isNum(string num_str);
 int SumString(string num_str);
+int SumOfSum(int num_to_add);
 
 
 //BEGIN MAIN
 int main(){
-    string numbers = " ";
+    vector<string> numbers;
+	string num_str = "";
+    int repeat;
 
     display("Digit Summ-oner v9.9","Sum all the digits all the time!",10);
 
-    do { //while the string isn't only numbers
-        cout << "Enter a set of numbers without spaces: ";
-        setcolor(14);
-        getline(cin >> ws,numbers);
+    cout << "How many sets of numbers would you like to enter: ";
+    i_in(&repeat,1);
+
+    for (int i = 0; i < repeat; i++){
+        do { //while the string isn't only numbers
+            cout << "Enter a set of numbers without spaces: ";
+            setcolor(14);
+            getline(cin >> ws,num_str);
+			numbers.push_back(num_str);
+            setcolor();
+        } while (isNum(numbers[i]));
+
+        sort(numbers[i].begin(),numbers[i].end()); //smallest to largest order
+
+        cout << endl << "Your numbers sorted are: ";
+    	setcolor(10);
+    	cout << numbers[i] << endl << endl;
         setcolor();
-    } while (isNum(numbers));
+    	cout << "The smallest number entered is: ";
+    	setcolor(10);
+    	cout << numbers[i][0] << endl; //index 0 == smallest
+        setcolor();
+    	cout << "The largest number entered is: ";
+    	setcolor(10);
+    	cout << numbers[i][numbers[i].length()-1] << endl; //index at length - 1 == largest
+        setcolor();
+    	cout << endl << "The sum of your digits is: ";
+    	setcolor(10);
+    	cout << SumString(numbers[i]) << endl << endl;
+        setcolor();
+    }
 
-    sort(numbers.begin(),numbers.end()); //smallest to largest order
-
-    cout << endl << "Your numbers sorted are: ";
-	setcolor(11);
-	cout << numbers << endl << endl;
-    setcolor();
-	cout << "The smallest number entered is: ";
-	setcolor(11);
-	cout << numbers[0] << endl; //index 0 == smallest
-    setcolor();
-	cout << "The largest number entered is: ";
-	setcolor(11);
-	cout << numbers[numbers.length()-1] << endl; //index at length - 1 == largest
-    setcolor();
-	cout << endl << "The sum of your digits is: ";
-	setcolor(11);
-	cout << SumString(numbers) << endl;
-    setcolor();
 	return 0;
 }
 //END MAIN
