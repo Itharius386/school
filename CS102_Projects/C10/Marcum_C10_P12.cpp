@@ -13,11 +13,25 @@
 #include <iomanip>
 #include <fstream>
 #include <string>
+#include <vector>
 #include "marcum_header.h"
 #include "marcum_header.cpp"
-
 //namespace
 using namespace std;
+
+//Class
+class Account{
+    private:
+        string username;
+        string password;
+    public:
+        Account(){}
+        Account(string user, string pass){username = user; password = pass;}
+        void setUsername(string user){username = user;}
+        void setPassword(string pass){password = pass;}
+        string getUsername(){return username;}
+        string getPassword(){return password;}
+};
 
 //prototype
 bool PasswordCheck(string password);
@@ -27,7 +41,10 @@ int main(){
     string password = "", username = "";
     int account = 0; //number of accounts to add
     fstream Vault;
-    Vault.open("notpasswords.txt");
+    vector<Account> your_accounts;
+
+    Vault.open("notpasswords.txt",ios::in|ios::app);
+
     display("Super Secure Secret Password Safe vSSSS+", "Keeping it secret, keeping it safe");
 
     cout << "How many accounts do you want to add to your safe: ";
@@ -35,16 +52,19 @@ int main(){
 
     for (int i = 0; i < account; i++){
         cout << "Enter your username: ";
+        setcolor(14);
         getline(cin >> ws, username);
+        setcolor();
         do {
             cout << "Enter a password:    ";
-            setcolor(0);
+            setcolor(0); //not as good as echo off, but it's fine for this
             getline(cin >> ws, password);
             setcolor();
         } while(!PasswordCheck(password));
+        Vault << username << " " << password << endl;
         cout << "Account Saved." << endl;
     }
-
+    Vault.close();
     return 0;
 }
 //END MAIN
