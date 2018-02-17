@@ -8,7 +8,9 @@
  *                                                                                         *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 //oh and it saves your usernames and passwords for you
-//busy week and this is the onyl one I had a chance to really work on
+//busy week and this is the only one I had a chance to really work on
+//file does not do well with outside edits
+//unless they conform to the 'id username password' scheme with id incrementing properly
 
 //headers
 #include <iostream>
@@ -54,7 +56,7 @@ int main(){
     fstream Vault; //filestream
     vector<Account> your_accounts;
 
-    display("Super Secure Secret Password Safe vSSS+", "Keeping it secret, keeping it safe!");
+    display("Super Secure Secret Password Safe vSSS+", "Keeping it secret, keeping it safe!",3);
 
     cout << "Please enter your vault name: "; //get the vault file name
     setcolor(14);
@@ -70,10 +72,10 @@ int main(){
             //testing for read errors - just prints out what it read in
             //cout << id << " " << username << " " << password << endl;
             your_accounts.push_back(Account(id,username,password));
-            id++;
+            id++; //Makes sure the id is always +1 of what was read in
             }
-        setcolor(14);
-        cout << "Vault Loaded" << endl; //success
+        setcolor(3);
+        cout << "Vault Loaded" << endl; //Let them know it loaded correctly
         setcolor();
         Vault.close();
         Vault.open(account_name.c_str(),ios::out);
@@ -110,7 +112,8 @@ int main(){
     }
     if (save)
         for (int i = 0; i < id; i++){ //rewrite the accounts to the vault
-            Vault << your_accounts[i].getID() << " " << your_accounts[i].getUsername() << " " << your_accounts[i].getPassword() << endl;
+            Vault << your_accounts[i].getID() << " " << your_accounts[i].getUsername() \
+                  << " " << your_accounts[i].getPassword() << endl;
     }
     if (save)
         Vault.close();
@@ -120,14 +123,15 @@ int main(){
     c_in(&yesno,yn_check,2);
     if (yesno == 'y'){
 		setcolor(13);
-        cout << left << setw(4) << "ID" << setw(20) << "Account Name" << setw(20) << "Password" << endl;
+        cout << endl << left << setw(4) << "ID" << setw(20) << "Account Name" << setw(20) << "Password" << endl;
 		setcolor(11);
 		for (int i = 0; i < 80; i++)
 			cout << "_";
 		setcolor();
 		cout << endl;
         for (int i = 0; i < id; i++) //rewrite the accounts to the vault
-            cout << setw(4) << your_accounts[i].getID() << setw(20) << your_accounts[i].getUsername() << setw(20) << your_accounts[i].getPassword() << endl;
+            cout << setw(4) << your_accounts[i].getID() << setw(20) << your_accounts[i].getUsername() \
+                 << setw(20) << your_accounts[i].getPassword() << endl;
     }
     return 0;
 }
@@ -201,7 +205,7 @@ bool ExtentionCheck(string *file_name, string extension){
 		if (ext == extension)
 			return 1;
         else { //just tack .pass to the end of it - good enough for now
-               //cause all kinds of bad errors for misspelling though
+               //terrible in the long run though
         		file_name->append(extension);
         		return 1;
 			}

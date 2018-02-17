@@ -6,7 +6,7 @@
  *    Function: Sum the digits of a String                                                 *
  *                                                                                         *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-//simple this time
+//left it pretty simple this time
 //fun with vectors of strings
 
 //header
@@ -23,8 +23,6 @@ using namespace std;
 //prototype
 bool isNum(string num_str);
 int SumString(string num_str);
-int SumOfSum(int num_to_add);
-
 
 //BEGIN MAIN
 int main(){
@@ -32,7 +30,7 @@ int main(){
 	string num_str = "";
     int repeat;
 
-    display("Digit Summ-oner v9.9","Sum all the digits all the time!",10);
+    display("Digit Summ-oner v9.9","Sum all the digits all the time!",2);
 
     cout << "How many sets of numbers would you like to enter: ";
     i_in(&repeat,1);
@@ -42,25 +40,26 @@ int main(){
             cout << "Enter a set of numbers without spaces: ";
             setcolor(14);
             getline(cin >> ws,num_str);
-			numbers.push_back(num_str);
             setcolor();
-        } while (isNum(numbers[i]));
+        } while (!isNum(num_str));
+		numbers.push_back(num_str);
 
+    //for (int i = 0; i < repeat; i++)
         sort(numbers[i].begin(),numbers[i].end()); //smallest to largest order
 
-        cout << endl << "Your numbers sorted are: ";
+        cout << "Your numbers sorted are: ";
     	setcolor(10);
-    	cout << numbers[i] << endl << endl;
+    	cout << numbers[i] << endl;
         setcolor();
     	cout << "The smallest number entered is: ";
     	setcolor(10);
     	cout << numbers[i][0] << endl; //index 0 == smallest
         setcolor();
-    	cout << "The largest number entered is: ";
+    	cout << "The largest number entered is:  ";
     	setcolor(10);
     	cout << numbers[i][numbers[i].length()-1] << endl; //index at length - 1 == largest
         setcolor();
-    	cout << endl << "The sum of your digits is: ";
+    	cout << "The sum of your digits is:      ";
     	setcolor(10);
     	cout << SumString(numbers[i]) << endl << endl;
         setcolor();
@@ -77,9 +76,9 @@ int main(){
 //Else returns 0
 bool isNum(string num_str){
     for (int i = 0; i < num_str.length(); i++){ //for the length of the string
-        if (!isdigit(num_str[i])) //if any character is not a digit, return 0
+        if (!isdigit(num_str[i])){ //if any character is not a digit, return 0
             cout << "Please enter only numbers." << endl;
-            return 0;
+            return 0;}
     }
     return 1; //else it is all digits
 } //isNum END

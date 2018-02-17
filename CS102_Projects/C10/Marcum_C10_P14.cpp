@@ -7,11 +7,13 @@
  *              I can't think of a easier way to explain it                                *
  *                                                                                         *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-//The most minimum
+//Also simple
 
 //header
 #include <iostream>
 #include <iomanip>
+#include <vector>
+#include <algorithm>
 #include <string>
 #include <sstream>
 #include "marcum_header.h"
@@ -25,28 +27,38 @@ string sentenceConvert(string sentence);
 
 //BEGIN MAIN
 int main(){
-    string WordsWordsWords, fixed_sentence;
+    string WordsWordsWords;
+    vector<string> fixed_sentences;
+    int repeat;
 
-    display("Sentence Fixer 1.01","Fixing your poorly written sentences since 2018",13);
+    display("Sentence Fixer 1.01","Fixing your poorly written sentences since 2018",1);
 
-    setcolor(2);
-    cout << "Enter a sentence without spaces or punctuation, but capitalize each word." << endl \
-    	 <<"Ex: TheQuickBrownFoxJumpedOverTheLazyDog" << endl << endl;
-    setcolor();
+        setcolor(2);
+        cout << "Enter a sentence without spaces or punctuation, but capitalize each word." << endl \
+    	     <<"Ex: TheQuickBrownFoxJumpedOverTheLazyDog" << endl << endl;
+        setcolor();
 
-    do {
-		cout << "Enter a sentence: ";
-        getline(cin >> ws, WordsWordsWords);
-    } while(!sentenceCheck(WordsWordsWords));
+        cout << "How many sentences would you like to enter? ";
+        i_in(&repeat,1);
+        for (int i = 0; i < repeat; i++){
+            do {
+                cout << "Enter a sentence: ";
+                setcolor(14);
+                getline(cin >> ws, WordsWordsWords);
+                setcolor();
+            } while(!sentenceCheck(WordsWordsWords));
 
-    fixed_sentence = sentenceConvert(WordsWordsWords); //The fixer
+            fixed_sentences.push_back(sentenceConvert(WordsWordsWords));
+        }
 
-    cout << endl << "We fixed your sentence:" << endl;
-	cout << WordsWordsWords << endl;
+        for (int i  = 0; i < repeat; i++){
+            cout << "Your fixed sentence: ";
+            setcolor(9);
+            cout << fixed_sentences[i] << endl;
+            setcolor();}
 
     return 0;
-}
-//END MAIN
+}//END MAIN
 
 //sentenceCheck
 //Takes in a string
@@ -56,7 +68,7 @@ bool sentenceCheck(string sentence){
     int has_upper = 0;
     for (int i = 0; i < sentence.length(); i++){
         if (!isalpha(sentence[i])){ //is it not a letter?
-            cout << "Invalid Sentence, please try again." << endl;
+            cout << "Invalid Sentence, letters only." << endl;
 			return 0;
 			}
         if (isupper(sentence[i]))
@@ -68,7 +80,7 @@ bool sentenceCheck(string sentence){
         cout << "Please fix your capitalization." << endl;
         return 0;
     }
-}
+}//sentenceCheck
 
 //sentenceConvert
 //takes in a horrible sentence
@@ -90,4 +102,4 @@ string sentenceConvert(string sentence){
 		}
 	temp << "."; //finish with a period
 	return temp.str();
-}
+} //sentenceConvert
