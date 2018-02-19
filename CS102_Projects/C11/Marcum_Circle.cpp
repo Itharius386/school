@@ -8,13 +8,18 @@ prompt for radius - print radius area and circumference
 #include <iomanip>
 #include <vector>
 #include <cmath>
+#include "marcum_header.h"
+#include "marcum_header.cpp"
+//namespace
 using namespace std;
 
-class Shape{
+//Base Shape Class
+class Shape {
 public:
-    virtual double getArea() = 0;
+    virtual double getArea(){};
 };
 
+//Circle Class
 class Circle : public Shape{
 private:
     double const pi = 3.14159;
@@ -24,7 +29,7 @@ public:
     Circle(double r){radius = r;}
     void setRadius(double r){radius = r;}
     double getRadius(){return radius;}
-    virtual double getArea(){return pi*pow(2,radius);}
+    double getArea(){return pi*pow(2,radius);}
 };
 
 int main(){
