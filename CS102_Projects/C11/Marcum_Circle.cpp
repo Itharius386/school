@@ -3,6 +3,7 @@ Circle class - 1 member of radius - private
 public - functions - setRadius, getRadius, getArea, and getCircum
 prompt for radius - print radius area and circumference
 */
+//Did my best to make it flow and simple to follow
 
 #include <iostream>
 #include <iomanip>
@@ -85,7 +86,7 @@ public:
 //bool comp(const Circle & a, const Circle & b) {return a.radius < b.radius;} //for sorting
 //prototypes
 int mainLoop();
-int numberOfShapes();
+int numberOfShapes(string type);
 int circleSetBy();
 void printArea(const Shape &shape);
 void printPerimeter(const Shape &shape);
@@ -96,6 +97,9 @@ int main(){
     int selection = 1;
 	vector<Shape*> shapes;
     //the shape vector of champions
+
+    //main loop start
+    //gets a selection
     while(selection = mainLoop()){
         /*
         1 = Circle
@@ -104,35 +108,39 @@ int main(){
         4 = Display
         5 = Exit
         */
-        if (selection == 1){
+        if (selection == 1){ //if circle
             double circle_value;
-            int setCircle = circleSetBy();
+            double pi = 3.14159;
+            int setCircle = circleSetBy(); //get set circle by
             /*
             1 = Radius
             2 = Diameter
             3 = Area
             4 = Circumference
             */
-            int loop = numberOfShapes("Circle");
+            int loop = numberOfShapes("Circle"); //num circles
             for (int i = 0; i < loop; i++){
-                if (setCircle = 1){
+                if (setCircle == 1){ //if Radius
                     cout << endl << "Enter radius of circle: ";
-                    d_in(&circle_value,1);
-                    shapes.push_back(new Circle(circle_value));
+                    d_in(&circle_value,1); //get a radius
+                    shapes.push_back(new Circle(circle_value)); //make a circle of radius
                 } //set by 1
-                if (setCircle = 1){
+                if (setCircle == 2){
                     cout << endl << "Enter Diameter of circle: ";
                     d_in(&circle_value,1);
+                    circle_value /=2;
                     shapes.push_back(new Circle(circle_value));
                 } //set by 2
-                if (setCircle = 1){
+                if (setCircle == 3){
                     cout << endl << "Enter Area of circle: ";
                     d_in(&circle_value,1);
+                    circle_value = sqrt(circle_value/pi);
                     shapes.push_back(new Circle(circle_value));
                 } //set by 3
-                if (setCircle = 1){
+                if (setCircle == 4){
                     cout << endl << "Enter Circumference of circle: ";
                     d_in(&circle_value,1);
+                    circle_value =  circle_value/(2*pi);
                     shapes.push_back(new Circle(circle_value));
                 } //set by 4
             } //loop of shape
