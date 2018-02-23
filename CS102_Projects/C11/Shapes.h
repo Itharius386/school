@@ -22,12 +22,12 @@ public:
 
 class Circle : public Shape{
 private:
-    double pi, \
-        radius;
+    static double pi;
+    double radius;
 
 public:
-    Circle() {radius = 1; pi = 3.14159;}
-    Circle(double r) {radius = r; pi = 3.14159;}
+    Circle() {radius = 1;}
+    Circle(double r) {radius = r;}
     string getType() const {return "Circle";}
     string getAttributes() const {
         stringstream ss;
@@ -44,6 +44,7 @@ public:
     double getPerimeter() const {return getCircum();} //circumference of a circle is it's perimeter
 }; //Circle
 
+double Circle::pi = 3.14159;
 
 class mRectangle : public Shape{
 private:
