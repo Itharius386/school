@@ -8,7 +8,7 @@
  *                                                                                         *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 //this one is kind of messy
-//was going to let it save too, but ran out of time
+//was going to let it save too, but ran out of time and wanted to work more on Circles
 
 #include <iostream>
 #include <iomanip>
@@ -101,7 +101,7 @@ while (mainLoop(&choice, data_entered)){
             report[year].year = current_year - year - 1;
             //keep having to use 'current-i-1' math and it looks ugly
             //also use year so many times it looks like it's spelled wrong - critical feature
-            cout << "Year " << current_year - year << endl;
+            cout << "Year " << current_year - year - 1<< endl;
             for (int month=JANUARY; month<=DECEMBER;month++){
                 report[year].monthlyData[month] = getWeatherData(month, temp_type, rain_type); //set monthly level data
                 cout << endl;

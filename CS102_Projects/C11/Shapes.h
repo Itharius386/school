@@ -1,3 +1,9 @@
+//============================
+//guard
+#ifndef SHAPES_HEADER
+#define SHAPES_HEADER
+//============================
+
 //Parent Shape Class
 class Shape {
 public:
@@ -65,3 +71,5 @@ public:
     double getSide2() const {return side2;}
     double getSide3() const {return side3;}
 }; //Triangle
+
+#endif
