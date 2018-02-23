@@ -167,6 +167,7 @@ int main(){
             setcolor(5);
             for (int i = 0; i < 80; i++)
                 cout << "_";
+            cout << endl;
             setcolor();
             for_each(shapes.begin(),shapes.end(), displayShape);
         getchar();
