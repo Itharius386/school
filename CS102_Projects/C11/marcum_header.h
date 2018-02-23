@@ -6,10 +6,13 @@
 //dependency headers
 #include <iostream>
 #include <string>
+#if defined(_WIN32) || defined(_WIN64) || defined(__CYGWIN__)
 #include <windows.h>
+#endif
 using namespace std;
 //functions prototypes here
 
+#if defined(_WIN32) || defined(_WIN64) || defined(__CYGWIN__)
 //============================
 //
 //  ohandle:    sets the standard output handle for a given handle
@@ -18,6 +21,7 @@ using namespace std;
 //
 //============================
 void ohandle(HANDLE *screen);
+#endif //only included if we have windows
 
 //============================
 //

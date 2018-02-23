@@ -4,7 +4,7 @@ using namespace std;
 #define ICOLOR 14
 #endif
 
-
+#if defined(_WIN32) || defined(_WIN64) || defined(__CYGWIN__)
 //============================
 //
 //  ohandle:    sets the standard output handle for a given handle
@@ -32,6 +32,14 @@ void setcolor(int color){
     ohandle(&screen);//set to standard output
     SetConsoleTextAttribute(screen, color);//set the color
 }
+#else //if not windows
+
+void setcolor(int color){
+    return; //just returns
+}
+
+#endif
+
 
 //============================
 //
@@ -40,6 +48,7 @@ void setcolor(int color){
 //  Arg1, Arg2:    x,y position to place the cursor at
 //
 //============================
+#if defined(_WIN32) || defined(_WIN64) || defined(__CYGWIN__)
 void setpos(short col, short row){
     HANDLE screen;
     COORD position;
@@ -48,7 +57,7 @@ void setpos(short col, short row){
     position.Y = row;
     SetConsoleCursorPosition(screen, position);
 }
-
+#endif
 
 //============================
 //  d_in: Asks user for input, will prompt until a real number is entered and assigns it to argument1
