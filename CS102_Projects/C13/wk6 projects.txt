@@ -1,0 +1,40 @@
+Chapter 13 pg805 - 10, 12
+10. Number Array Class
+Design a class that has an array of floating-point numbers. The constructor should
+accept an integer argument and dynamically allocate the array to hold that many
+numbers. The destructor should free the memory held by the array. In addition, there
+should be member functions to perform the following operations:
+• Store a number in any element of the array
+• Retrieve a number from any element of the array
+• Return the highest value stored in the array
+• Return the lowest value stored in the array
+• Return the average of all the numbers stored in the array
+Demonstrate the class in a program.
+
+12. Coin Toss Simulator
+Write a class named Coin . The Coin class should have the following member variable:
+• A string named sideUp . The sideUp member variable will hold either “heads” or
+“tails” indicating the side of the coin that is facing up.
+The Coin class should have the following member functions:
+• A default constructor that randomly determines the side of the coin that is facing up
+(“heads” or “tails”) and initializes the sideUp member variable accordingly.
+• A void member function named toss that simulates the tossing of the coin. When
+the toss member function is called, it randomly determines the side of the coin that
+is facing up (“heads” or “tails”) and sets the sideUp member variable accordingly.
+• A member function named getSideUp that returns the value of the sideUp member
+variable.
+Write a program that demonstrates the Coin class. The program should create an
+instance of the class and display the side that is initially facing up. Then, use a loop
+to toss the coin 20 times. Each time the coin is tossed, display the side that is facing
+up. The program should keep count of the number of times heads is facing up and the
+number of times tails is facing up, and display those values after the loop finishes.
+13. Tossing Coins for a Dollar
+For this assignment, you will create a game program using the Coin class from
+Programming Challenge 12. The program should have three instances of the Coin
+class: one representing a quarter, one representing a dime, and one representing a nickel.
+When the game begins, your starting balance is $0. During each round of the game,
+the program will toss the simulated coins. When a coin is tossed, the value of the coin
+is added to your balance if it lands heads-up. For example, if the quarter lands headsup,
+25 cents is added to your balance. Nothing is added to your balance for coins that
+land tails-up. The game is over when your balance reaches $1 or more. If your balance
+is exactly $1, you win the game. You lose if your balance exceeds $1.
