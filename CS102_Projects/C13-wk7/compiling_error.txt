@@ -1,0 +1,580 @@
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp: In function 'int main()':
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:42: error: no match for 'operator<<' (operand types are 'const char [5]' and 'std::__cxx11::string {aka std::__cxx11::basic_string<char>}')
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                    ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\string:52:0,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_classes.h:40,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ios_base.h:41,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ios:42,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:38,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_string.h:5325:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_string.h:5325:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ios_base.h:46:0,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ios:42,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:38,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\system_error:209:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::error_code&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\system_error:209:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:497:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:497:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:502:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:502:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:508:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
+     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:508:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<char, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:514:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
+     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:514:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<char, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:519:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
+     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:519:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<char, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:539:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:539:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:638:0,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ostream.tcc:321:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:556:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:556:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<char, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:569:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:569:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<char, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:574:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:574:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<char, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:628:5: note: candidate: template<class _CharT, class _Traits, class _Tp> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&&, const _Tp&)
+     operator<<(basic_ostream<_CharT, _Traits>&& __os, const _Tp& __x)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:628:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:79:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Resetiosflags)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Resetiosflags __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:79:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:109:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setiosflags)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setiosflags __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:109:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:143:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setbase)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setbase __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:143:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:178:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setfill<_CharT>)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setfill<_CharT> __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:178:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:208:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setprecision)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setprecision __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:208:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:238:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setw)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setw __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:238:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:311:5: note: candidate: template<class _CharT, class _Traits, class _MoneyT> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Put_money<_MoneyT>)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_money<_MoneyT> __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:311:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:363:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Put_time<_CharT>)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_time<_CharT> __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:363:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:81:66: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[0] = "The "<< quarter.getCoinDenom();
+                                                                  ^
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:42: error: no match for 'operator<<' (operand types are 'const char [5]' and 'std::__cxx11::string {aka std::__cxx11::basic_string<char>}')
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                    ~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\string:52:0,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_classes.h:40,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ios_base.h:41,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ios:42,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:38,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_string.h:5325:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_string.h:5325:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ios_base.h:46:0,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ios:42,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:38,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\system_error:209:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::error_code&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\system_error:209:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:497:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:497:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:502:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:502:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:508:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
+     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:508:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<char, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:514:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
+     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:514:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<char, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:519:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
+     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:519:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<char, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:539:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:539:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:638:0,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ostream.tcc:321:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:556:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:556:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<char, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:569:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:569:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<char, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:574:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:574:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<char, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:628:5: note: candidate: template<class _CharT, class _Traits, class _Tp> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&&, const _Tp&)
+     operator<<(basic_ostream<_CharT, _Traits>&& __os, const _Tp& __x)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:628:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:79:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Resetiosflags)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Resetiosflags __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:79:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:109:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setiosflags)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setiosflags __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:109:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:143:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setbase)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setbase __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:143:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:178:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setfill<_CharT>)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setfill<_CharT> __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:178:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:208:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setprecision)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setprecision __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:208:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:238:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setw)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setw __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:238:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:311:5: note: candidate: template<class _CharT, class _Traits, class _MoneyT> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Put_money<_MoneyT>)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_money<_MoneyT> __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:311:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:363:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Put_time<_CharT>)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_time<_CharT> __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:363:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:82:63: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[1] = "The "<< dime.getCoinDenom();
+                                                               ^
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:42: error: no match for 'operator<<' (operand types are 'const char [5]' and 'std::__cxx11::string {aka std::__cxx11::basic_string<char>}')
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                    ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\string:52:0,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_classes.h:40,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ios_base.h:41,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ios:42,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:38,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_string.h:5325:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_string.h:5325:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ios_base.h:46:0,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ios:42,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:38,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\system_error:209:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::error_code&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\system_error:209:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:497:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:497:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:502:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:502:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:508:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
+     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:508:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<char, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:514:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
+     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:514:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<char, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:519:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
+     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:519:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<char, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:539:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:539:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:638:0,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ostream.tcc:321:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:556:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:556:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<char, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:569:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:569:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<char, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:574:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:574:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<char, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39:0,
+                 from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:12:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:628:5: note: candidate: template<class _CharT, class _Traits, class _Tp> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&&, const _Tp&)
+     operator<<(basic_ostream<_CharT, _Traits>&& __os, const _Tp& __x)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:628:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:79:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Resetiosflags)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Resetiosflags __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:79:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:109:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setiosflags)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setiosflags __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:109:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:143:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setbase)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setbase __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:143:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:178:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setfill<_CharT>)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setfill<_CharT> __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:178:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:208:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setprecision)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setprecision __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:208:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:238:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setw)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setw __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:238:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:311:5: note: candidate: template<class _CharT, class _Traits, class _MoneyT> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Put_money<_MoneyT>)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_money<_MoneyT> __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:311:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
+In file included from C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:13:0:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:363:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Put_time<_CharT>)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_time<_CharT> __f)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iomanip:363:5: note:   template argument deduction/substitution failed:
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C13-wk7\Marcum_C13_P13.cpp:83:65: note:   mismatched types 'std::basic_ostream<_CharT, _Traits>' and 'const char [5]'
+                 coin_selected[2] = "The "<< nickel.getCoinDenom();
+                                                                 ^
