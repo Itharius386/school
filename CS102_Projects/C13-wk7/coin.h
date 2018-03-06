@@ -13,10 +13,10 @@
 
 class Coin{
 private:
-    float denomination;
+    int denomination;
     std::string sideUp;
 public:
-    Coin(float denom = 0){
+    Coin(int denom = 0){
         denomination = denom;
         int r = rand()%1000;
         if (r < 500)
@@ -38,12 +38,12 @@ public:
             setcolor(COIN_COLOR_T);
         return sideUp;
     }
-    void setDenom(float denom){ //sets numeric value of denomination
+    void setDenom(int denom){ //sets numeric value of denomination
         denomination = denom;
     }
-    float getDenom() const { return denomination; } //returns the value of the denomination
+    inline int getDenom() const { return denomination; } //returns the value of the denomination
     std::string getCoinDenom() const { //returns the name of the denomination set
-        switch (static_cast<int>(denomination*100)) {
+        switch (denomination) {
             case 100: return "dollar coin";
             case 50: return "half-dollar coin";
             case 25: return "quarter";

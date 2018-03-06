@@ -3,16 +3,17 @@
  * Author: James Marcum                                                    *
  * Class: CS 102                                                           *
  *                                                                         *
- * Function: Coin Game                                                     *
+ * Function: Coin Game - Flip coins, add the resulting heads to your pool  *
+ *           Win if you get exactly the winning amount!                    *
  *                                                                         *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
+//floating point maths required me to switch the coin class from double to int for
+//the denomination to ensure proper checking against the total
 
 //headers
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include <sstream>
 #include <ctime>
 #include <cstdlib>
 #include "marcum_header.h"
@@ -26,19 +27,19 @@ int mainLoop();
 void initDispCoin(const Coin &coin);
 void dispCoin(const Coin &coin);
 
-double winning_amount = 1;
+int winning_amount = 100;
 //==============================================================================
 //BEGIN MAIN
 int main(){
     srand(time(0));
     //srand(123); //debug seed - will add to $1.00
     //srand(1234); //debug seed - will bust
-
+    double temp; //needed for chaning the winning amount
     int loop, selection = -1;
-    Coin quarter(.25), dime(.10), nickel(.05);
+    Coin quarter(25), dime(10), nickel(5);
     while (selection = mainLoop()){
         if (selection == 1){
-            float sum = 0;
+            double sum = 0;
             initDispCoin(quarter);
             initDispCoin(dime);
             initDispCoin(nickel);
@@ -58,32 +59,60 @@ int main(){
                 if (nickel.getSideUp() == "heads")
                     sum += nickel.getDenom();
                 setcolor();
-                cout << endl << fixed << showpoint << setprecision(2) <<"Total so far: $" << sum << endl;
-                if (sum > winning_amount) {
-                    cout << "You lost!" << endl << "Press enter to return to menu";
-                    getchar();
-                    break;
-                }
-                else if (sum == winning_amount) {
+                cout << endl << fixed << showpoint << setprecision(2) <<"Total so far: $" << static_cast<double>(sum)/100 << endl;
+                if (sum == winning_amount) {
                     cout << "You won!" << endl << "Press enter to return to menu";
                     getchar();
                     break;
                 }
+                else if (sum > winning_amount) {
+                    cout << "You lost!" << endl << "Press enter to return to menu";
+                    getchar();
+                    break;
+                }
                 cout << "Press enter for next toss" << endl;
-            } while (sum < 1);
+            } while (sum < winning_amount);
         } //selection 1
         if (selection == 2){
             string options[] = {"Change denominations", "Change winning threshold", "Return to Menu"};
+            cout << endl;
             char option = Menu(options, 3);
+            cout << endl;
             if (option == 'a'){
-                string coin_selected[3];
+                char coin_selected, coins[] = {'a','b','c'};
+                double denom;
                 cout << "Which coin do you want to change:" << endl;
-                coin_selected[0] = "The "<< quarter.getCoinDenom();
-                coin_selected[1] = "The "<< dime.getCoinDenom();
-                coin_selected[2] = "The "<< nickel.getCoinDenom();
+                cout << "A: The "<< quarter.getCoinDenom() << endl;
+                cout << "B: The "<< dime.getCoinDenom() << endl;
+                cout << "C: The "<< nickel.getCoinDenom() << endl;
+                cout << "Selection an option: ";
+                c_in(&coin_selected, coins, 3);
+                cout << endl << "Value must be between 0.01 and 1.00" << endl;
+                switch(coin_selected){
+                    case('a'): {
+                        cout << "Enter denomination for the selected " << quarter.getCoinDenom() << ": " ;
+                        GetNumInRange(denom, 1.0,0.01);
+                        quarter.setDenom(denom*100);
+                        break;
+                    }
+                    case('b'): {
+                        cout << "Enter denomination for the selected " << dime.getCoinDenom() << ": " ;
+                        GetNumInRange(denom, 1.0,0.01);
+                        dime.setDenom(denom*100);
+                        break;
+                    }
+                    case('c'): {
+                        cout << "Enter denomination for the selected " << nickel.getCoinDenom() << ": " ;
+                        GetNumInRange(denom, 1.0,0.01);
+                        nickel.setDenom(denom*100);
+                        break;
+                    }
+                } //denom switch
             } //S2 OA
             if (option == 'b'){
-
+                cout << "Enter a new winning threshold value (0.01 - 100.00): ";
+                GetNumInRange(temp,100.0,0.01);
+                winning_amount = temp * 100;
             } //S2 OB
             if (option == 'c'){
                 continue;
@@ -100,8 +129,8 @@ int mainLoop(){
     char option; //options[] = {'a','b','c'};
     string options[] = {"Play Game","Settings","Exit"};
     system("CLS");
-    display("Let's play a game! Flip the coins and add heads to your pool","",9);
-    cout << fixed << setprecision(2) << "You win if you get exactly $" << winning_amount << endl;
+    display("Let's play a game!", "Flip the coins and add heads to your pool!",9);
+    cout << fixed << showpoint << setprecision(2) << "You win if you get exactly $" << static_cast<double>(winning_amount)/100 << endl << endl;
     option = Menu(options,3);
     if (option == 'a')
         return 1;
