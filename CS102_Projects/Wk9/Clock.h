@@ -1,3 +1,4 @@
+#pragma once
 
 class Clock{
 private:
@@ -19,5 +20,12 @@ public:
     int getMinutes() {return minutes;}
     int getSeconds() {return seconds;}
     //overload + - ++() ++(int) --() --(int) < >
-    void operator+()
+    void operator+(); //add
+    void operator-(); //subtract
+    void operator>(); //greater than
+    void operator<(); //less than
+    void operator++(); //pre-increment
+    void operator++(int); //post-increment
+    void operator--(); //pre-decrement
+    void operator--(int); //post decrement
 };
