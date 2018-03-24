@@ -36,6 +36,7 @@ public:
     Clock operator-(const Clock &right); //subtract
     bool operator>(const Clock &right); //greater than
     bool operator<(const Clock &right); //less than
+    bool operator==(const Clock &right); //equal to
     Clock operator++(); //pre-increment
     Clock operator++(int); //post-increment
     Clock operator--(); //pre-decrement

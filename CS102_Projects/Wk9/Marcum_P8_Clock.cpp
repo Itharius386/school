@@ -7,10 +7,8 @@
  *                                                                             *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
- //careful overview of the example program showed a 12-hour base clock system
-  //this was the basis for calculations
- //hour 0 == 12
- //looking like a small issue with '>' '<' when the times are the same, couldn't figure out the cause
+ //used a 24 hour clock system because it makes more sense with  a 24 hr day
+ //since the 12 hour system does not track PM || AM, it is hard to tell if 12:59 would be > or < then something like 11:59 or 1:00
  //overloaded the '<<' because it makes this so much easier to read
  //kept it simple for spring break
 
@@ -77,14 +75,18 @@ int main(){
 
     // '>' use
     cout << "Is Time #1 > Time#2? ";
-    if (time1 > time2)
+    if (time1 == time2)
+        cout << "They are the same" << endl << endl;
+    else if (time1 > time2)
         cout << "True" << endl << endl;
     else
         cout << "False" << endl << endl;
 
     // '<' use
     cout << "Is Time #1 < Time#2? ";
-    if (time1 < time2)
+    if (time1 == time2)
+        cout << "They are the same" << endl << endl;
+    else if (time1 < time2)
         cout << "True" << endl << endl;
     else
         cout << "False" << endl << endl;

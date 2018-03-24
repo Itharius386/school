@@ -13,7 +13,7 @@ void Clock::simplify_time(){
             minutes = 60 - (abs(minutes) % 60);
         }
         if (hours < 0){
-            hours = 12 - (abs(hours) % 12);
+            hours = 24 - (abs(hours) % 24);
         }
     }
     //simplifies time below
@@ -25,12 +25,10 @@ void Clock::simplify_time(){
         hours += (minutes/60);
         minutes = minutes%60;
     }
-    if (hours >= 12){
-        hours = hours % 12;
+    if (hours >= 24){
+        hours = hours % 24;
     }
-    if (hours == 0){
-        hours = 12;
-    }
+
 }   //simplifies the time
 
 Clock Clock::operator+(const Clock &right){
@@ -72,6 +70,13 @@ bool Clock::operator<(const Clock &right){
     else
         return false;
 } //less than
+
+bool Clock::operator==(const Clock &right){
+    if (hours == right.hours && minutes == right.minutes && seconds == right.seconds)
+        return true;
+    else
+        return false;
+} //equal to
 
 Clock Clock::operator++(){
     ++hours;
