@@ -3,6 +3,7 @@
 
 void Clock::simplify_time(){
     if (hours < 0 || minutes < 0 || seconds < 0) {
+        //if negative time reduce
         if (seconds < 0){
             minutes -= ((abs(seconds)/60) + 1);
             seconds = 60 - (abs(seconds) % 60);
@@ -15,16 +16,20 @@ void Clock::simplify_time(){
             hours = 12 - (abs(hours) % 12);
         }
     }
-    if (seconds > 60){
+    //simplifies time below
+    if (seconds >= 60){
         minutes += (seconds/60);
         seconds = seconds%60;
     }
-    if (minutes > 60){
+    if (minutes >= 60){
         hours += (minutes/60);
         minutes = minutes%60;
     }
-    if (hours > 12){
+    if (hours >= 12){
         hours = hours % 12;
+    }
+    if (hours == 0){
+        hours = 12;
     }
 }   //simplifies the time
 

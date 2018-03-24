@@ -8,7 +8,9 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
  //careful overview of the example program showed a 12-hour base clock system
- //this was the basis for calculations
+  //this was the basis for calculations
+ //hour 0 == 12
+ //looking like a small issue with '>' '<' when the times are the same, couldn't figure out the cause
  //overloaded the '<<' because it makes this so much easier to read
  //kept it simple for spring break
 
