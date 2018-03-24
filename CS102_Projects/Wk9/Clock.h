@@ -1,18 +1,29 @@
 #pragma once
 
+#include <iostream>
+#include <iomanip>
+#include "marcum_header.h"
+#include "marcum_header.cpp"
+
+class Clock; //forward declaration
+
+std::ostream &operator<< (std::ostream &, const Clock &obj);
+
 class Clock{
 private:
     int hours,\
         minutes,\
         seconds;
-    simplify_time();
+    void simplify_time();
 public:
-    Clock(){};
-    Clock(hr,min,sec){
+    Clock(){hours = 0; minutes = 0; seconds = 0;} //defaults to 0
+    Clock(int hr, int min, int sec){
         hours = hr;
         minutes = min;
         seconds = sec;
-    }
+        simplify_time();
+    } //constructor
+    //inline set/get
     void setHours(int hr) {hours = hr;}
     void setMinutes(int min) {minutes = min;}
     void setSeconds(int sec) {seconds = sec;}
@@ -20,12 +31,15 @@ public:
     int getMinutes() {return minutes;}
     int getSeconds() {return seconds;}
     //overload + - ++() ++(int) --() --(int) < >
-    void operator+(); //add
-    void operator-(); //subtract
-    void operator>(); //greater than
-    void operator<(); //less than
-    void operator++(); //pre-increment
-    void operator++(int); //post-increment
-    void operator--(); //pre-decrement
-    void operator--(int); //post decrement
+    //see Clock.cpp
+    Clock operator+(const Clock &right); //add
+    Clock operator-(const Clock &right); //subtract
+    bool operator>(const Clock &right); //greater than
+    bool operator<(const Clock &right); //less than
+    Clock operator++(); //pre-increment
+    Clock operator++(int); //post-increment
+    Clock operator--(); //pre-decrement
+    Clock operator--(int); //post decrement
+    //friendly overloaded operator
+    friend std::ostream &operator<< (std::ostream &, const Clock &obj);
 };

@@ -1,3 +1,4 @@
+#pragma once
 #include "marcum_header.h"
 
 //============================
