@@ -51,8 +51,31 @@ public:
     int getShift() { return shift; }
     double getRate() { return pay_rate; }
 };
+int MainLoop();
 
 int main() {
+    int selection = -1;
+    while(selection = MainLoop()){
+
+
+    }
     cout << Employee::getEmployeeTotal();
     return 0;
 }
+
+//==============================================================================
+int MainLoop() {
+char option; //options[] = {'a','b','c'};
+string options[] = {"Create Production Worker","View Workers","Exit"};
+system("CLS");
+display("Worker Automation Station","v1.01",9);
+option = Menu(options,3);
+if (option == 'a')
+    return 1;
+if (option == 'b')
+    return 2;
+if (option == 'c')
+    return 0;
+}
+//MainLoop
+//==============================================================================
