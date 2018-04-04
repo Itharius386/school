@@ -1,0 +1,6 @@
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C15\C15_P1.cpp: In destructor 'ProductionWorker::~ProductionWorker()':
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C15\C15_P1.cpp:47:27: error: only constructors take member initializers
+     ~ProductionWorker() : ~Employee();
+                           ^
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C15\C15_P1.cpp:47:27: error: expected identifier before '~' token
+C:\Users\James\Documents\GitHub\school\CS102_Projects\C15\C15_P1.cpp:47:27: error: expected '{' before '~' token
