@@ -1,79 +1,128 @@
-/*
-Design a Ship class that has the following members:
-• A member variable for the name of the ship (a string)
-• A member variable for the year that the ship was built (a string)
-• A constructor and appropriate accessors and mutators
-• A virtual print function that displays the ship’s name and the year it was built.
-Design a CruiseShip class that is derived from the Ship class. The CruiseShip class
-should have the following members:
-• A member variable for the maximum number of passengers (an int )
-• A constructor and appropriate accessors and mutators
-• A print function that overrides the print function in the base class. The CruiseShip
-class’s print function should display only the ship’s name and the maximum number
-of passengers.
-Design a CargoShip class that is derived from the Ship class. The CargoShip class
-should have the following members:
-• A member variable for the cargo capacity in tonnage (an int ).
-• A constructor and appropriate accessors and mutators.
-• A print function that overrides the print function in the base class. The CargoShip
-class’s print function should display only the ship’s name and the ship’s cargo capacity.
-Demonstrate the classes in a program that has an array of Ship pointers. The array
-elements should be initialized with the addresses of dynamically allocated Ship ,
-CruiseShip , and CargoShip objects. (See Program 15-14 , lines 17 through 22, for an
-example of how to do this.) The program should then step through the array, calling
-each object’s print function.
-*/
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *                                                                             *
+ * Author: James Marcum                                                        *
+ * Class: CS 102                                                               *
+ *                                                                             *
+ * Function: Ships, Cargo Ships, and Cruise Ships - a registry basically       *
+ *                                                                             *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+ //used a vector over an array, same end result though
 
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
+#include "Ships.h"
+#include "marcum_header.h"
+#include "marcum_header.cpp"
 using namespace std;
 
-class Ship {
-protected:
-    string name;
-    string year;
-public:
-    Ship() {
-        name = " ";
-        year = "1900";
-    }
-    Ship(string nm, string yr = "1900") {
-        name = nm;
-        year = yr;
-    }
-    void setName(string nm) { name = nm; }
-    void setYear(string yr) { year = yr; }
-    string getName() { return name; }
-    string getYear() { return year; }
-    virtual void printShip() { cout << "The ship is called S.S. " << name << " and was built in " << year << endl; }
-};
+//prototypes
+int mainLoop();
+int numShips(string shiptype);
+void DisplayShip(const Ship *ship);
 
-class CruiseShip : public Ship {
-private:
-    int passengers;
-public:
-    CruiseShip(string nm, string yr, int pass) : Ship(nm, yr) { passengers = pass; }
-    CruiseShip(string nm, int pass) : Ship(nm) { passengers = pass; }
-    void setPass(int num) { passengers = num; }
-    int getPass() { return passengers; }
-    void printShip() { cout << "The ship is called S.S. " << name << " and can hold " << passengers << " passengers" << endl;}
-};
-
-class CargoShip : public Ship {
-private:
-    int cargo;
-public:
-    CargoShip(string nm, string yr, int num) : Ship(nm, yr) { cargo = num; }
-    CargoShip(string nm, int num) : Ship(nm) { cargo = num; }
-    void setCargo(int num) { cargo = num; }
-    int getCargo() { return cargo; }
-    void printShip() { cout << "The ship is called S.S. " << name << " and can hold " << cargo << " tonnes of cargo" << endl; }
-};
-
-
+//BEGIN MAIN
 int main() {
+    int selection = -1;
     vector<Ship*> registry;
+    while (selection = mainLoop()) {
+        /*
+        1 Create Ship
+        2 Create Cruise Ship
+        3 Create Cargo Ship
+        4 Display
+        5 Exit
+        */
+        if (selection == 1) {
+            string name, year;
+            int loop = numShips("ship");
+            for (int i = 0; i < loop; i++) {
+                cout << endl << "Ship #" << i + 1 << endl;
+                cout << "What is the name of the ship: ";
+                setcolor(14);
+                getline(cin, name);
+                setcolor();
+                cout << "What year was it built: ";
+                setcolor(14);
+                getline(cin, year);
+                setcolor();
+                registry.push_back(new Ship(name, year)); //adds the ship to registry
+            }//loop
+        } // selection 1
+        if (selection == 2) {
+            string name;
+            int pass;
+            int loop = numShips("cruise ship");
+            for (int i = 0; i < loop; i++) {
+                cout << endl << "Ship #" << i + 1 << endl;
+                cout << "What is the name of the ship: ";
+                setcolor(14);
+                getline(cin, name);
+                setcolor();
+                cout << "How many passengers can it hold: ";
+                GetNum(pass);
+                registry.push_back(new CruiseShip(name, pass)); //adds the ship to registry
+            }//loop
+        } // selection 2
+        if (selection == 3) {
+            string name;
+            int tonnes;
+            int loop = numShips("cargo ship");
+            for (int i = 0; i < loop; i++) {
+                cout << endl << "Ship #" << i + 1 << endl;
+                cout << "What is the name of the ship: ";
+                setcolor(14);
+                getline(cin, name);
+                setcolor();
+                cout << "How many tonnes of cargo can it hold: ";
+                GetNum(tonnes);
+                registry.push_back(new CargoShip(name, tonnes)); //adds the ship to registry
+            }//loop
+        } // selection 3
+        if (selection == 4) {
+            for_each(registry.begin(), registry.end(), DisplayShip);
+            cout << endl << "Press Enter to return to Menu.";
+            getchar();
+        } // selection 4
+    } //mainLoop
 
     return 0;
-}
+}//END MAIN
+
+//==============================================================================
+//BEGIN Functions
+
+//main loop - main display and selection getter for loop
+int mainLoop(){
+    char option, options[] = {'a','b','c','d','e'};
+    system("CLS");
+    display("Ship Registry v2.0","Sail On!", 10);
+    cout<< "Options:" << endl \
+        << "A: Create Ship" << endl \
+        << "B: Create Cruise Ship" << endl \
+        << "C: Create Cargo Ship" << endl \
+        << "D: Display Ships" << endl \
+        << "E: Exit" << endl << endl;
+    cout << "Select an Option from the list: ";
+    c_in(&option,options,5);
+    switch(option){
+        case('a'): return 1;
+        case('b'): return 2;
+        case('c'): return 3;
+        case('d'): return 4;
+        case('e'): return 0;
+    }
+    return 0; //incase somehow breaks out of the loop
+}//mainLoop
+
+int numShips(string shiptype) {
+    int loop;
+    cout << "How many " << shiptype << "s do you want to make: ";
+    GetNum(loop,1);
+    return loop;
+} //numShips
+
+void DisplayShip(const Ship *ship) {
+    ship->printShip();
+}//DisplayShip
