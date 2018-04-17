@@ -1,74 +1,83 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *                                                                             *
+ * Author: James Marcum                                                        *
+ * Class: CS 102                                                               *
+ *                                                                             *
+ * Function: Employees - Helps keep track of your production workers           *
+ *                                                                             *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+//I thought it was due Friday, whoops D:
+//We have a worker shortage, and you can only hire one person at a time!
+
 #include <iostream>
 #include <iomanip>
+#include <map>
 #include "marcum_header.h"
 #include "marcum_header.cpp"
-#include <sstream>
+#include "Employee.h"
+
+//namespace
 using namespace std;
 
-class Employee {
-protected:
-    string employee_name;
-    int employee_number;
-    string hire_date;
-    static int empNumCount;
-public:
-    Employee(string name, int number, int year = 1900, int month = 1, int day = 1) {
-        employee_name = name;
-        employee_number = number;
-        setHireDate(year,month,day);
-        empNumCount++;
-    }
-    ~Employee() { empNumCount--; }
-    string getName() { return employee_name; }
-    int getNumber() { return employee_number; }
-    string getHireDate() { return hire_date; }
-    void setName(string name){ employee_name = name; }
-    void setNumber(int num) { employee_number = num; }
-    void setHireDate(int year, int month, int day){
-        stringstream temp;
-        temp << day << "/" << month << "/" << year;
-        hire_date = temp.str();
-    }
-    static const int getEmployeeTotal();
-};
-
-int Employee::empNumCount = 0;
-const int Employee::getEmployeeTotal() { return empNumCount; }
-
-class ProductionWorker : public Employee {
-private:
-    //day == 1, night == 2
-    int shift;
-    double pay_rate;
-public:
-    ProductionWorker(int shift_time, double rate, string name, int number, \
-        int year = 1900, int month = 1, int day = 1) : Employee(name, number, year, month, day) {
-            shift = shift_time;
-            pay_rate = rate;
-    }
-    void setRate(double rate) { pay_rate = rate; }
-    void setShift(int shift_time) { shift = shift_time; }
-    int getShift() { return shift; }
-    double getRate() { return pay_rate; }
-};
+//Prototypes
 int MainLoop();
 
 int main() {
     int selection = -1;
+    ProductionWorker my_only_employee(1,1,"Bill",1,1900,1,1);
+
     while(selection = MainLoop()){
-
-
+        if (selection == 1) {
+            string name;
+            int number;
+            int year;
+            int month;
+            int day;
+            int shift;
+            double rate;
+            cout << endl << "What is the employee's name: ";
+            setcolor(14);
+            getline(cin, name);
+            setcolor();
+            cout << "What is the employee number: ";
+            GetNum(number);
+            cout << "Employment year: ";
+            GetNum(year);
+            cout << "Employment month: ";
+            GetNumInRange(month,12,1);
+            cout << "Employment day: ";
+            GetNumInRange(day,31,1);
+            cout << "Day(1) or Night(2) shift: ";
+            GetNumInRange(shift,2,1);
+            cout << "What is the pay rate: ";
+            GetNum(rate);
+            ProductionWorker temp(shift, rate, name, number, year, month, day);
+            my_only_employee = temp;
+        } //selection 1
+        if (selection == 2) {
+            setcolor(12);
+            cout << endl << "Name      Number    Shift     Rate      Start-Date" << endl;
+            setcolor(10);
+            cout << left << setw(10) << my_only_employee.getName();
+            cout << setw(10) << my_only_employee.getNumber();
+            cout << setw(10) << my_only_employee.getShift();
+            cout << fixed << setprecision(2) << setw(10) << my_only_employee.getRate();
+            cout << setw(10) << my_only_employee.getHireDate();
+            setcolor();
+            getchar();
+        } //selection 2
     }
-    cout << Employee::getEmployeeTotal();
     return 0;
 }
+//END MAIN
+
 
 //==============================================================================
 int MainLoop() {
 char option; //options[] = {'a','b','c'};
-string options[] = {"Create Production Worker","View Workers","Exit"};
+string options[] = {"Create Production Worker","View Worker","Exit"};
 system("CLS");
-display("Worker Automation Station","v1.01",9);
+display("Worker Automation Station v1.01","You only get the one worker, though",10);
 option = Menu(options,3);
 if (option == 'a')
     return 1;
