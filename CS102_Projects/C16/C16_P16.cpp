@@ -1,3 +1,15 @@
+/*
+Modify Programming Project #1 from Chapter 15 (Employee and Production Worker) so
+that they throw exceptions whenever any of the following occurs:
+The Employee Class should throw an exception named InvalidEmployeeNumber when it
+receives an employee number less than 0 or greater than 999.
+The ProductionWorker Class should throw and exception named InvalidShift when it
+receives and invalid shift.
+The ProductionWorker Class should throw and exception named InvalidPayRate when it
+receives a negative number for the hourly pay rate.
+
+Write a program that will prompt the user for this information.
+*/
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  *                                                                             *
  * Author: James Marcum                                                        *
@@ -6,9 +18,7 @@
  * Function: Employees - Helps keep track of your production workers           *
  *                                                                             *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-//I thought it was due Friday, whoops D:
-//We have a worker shortage, and you can only hire one person at a time!
-#include <sys/stat.h>
+
 #include <iostream>
 #include <iomanip>
 #include <map>
@@ -25,8 +35,6 @@ int MainLoop();
 int main() {
     int selection = -1;
     ProductionWorker my_only_employee(1,1,"Bill",1,1900,1,1);
-
-    stat(file, &buf) == 0);
 
     while(selection = MainLoop()){
         if (selection == 1) {
