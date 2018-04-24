@@ -21,7 +21,7 @@ T ABS_Val(T num) {
 int main() {
     int int_num, loop = 1;
     double float_num;
-    display("ABS TEST","", 10);
+    display("Absolute Value Tester"," ", 10);
     cout << "How many integers would you like to enter: ";
     GetNum(loop,1);
 

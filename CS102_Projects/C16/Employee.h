@@ -19,16 +19,16 @@ public:
         empNumCount++;
     }
     ~Employee() { empNumCount--; }
+    class InvalidEmployeeNumber {}; //Exception for Invalid ID
     string getName() { return employee_name; }
     int getNumber() { return employee_number; }
     string getHireDate() { return hire_date; }
     void setName(string name){ employee_name = name; }
     void setNumber(int num) {
-        try
-        if (num <= 999 && num >= 0)
-            employee_number = num;
+        if (num > 999 || num < 0)
+            throw InvalidEmployeeNumber();
         else
-            throw InvalidEmployeeNumber;
+            employee_number = num;
     }
     void setHireDate(int year, int month, int day){
         stringstream temp;

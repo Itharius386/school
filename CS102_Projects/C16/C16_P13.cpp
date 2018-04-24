@@ -26,7 +26,6 @@ using namespace std;
 //month enum
 enum MONTHS {JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, \
              JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER};
-//just for fun
 
 //==============================================================================
 //weather structure for 1 month of weather data
@@ -48,7 +47,7 @@ struct annualWeather{
     double annual_l_temp;
     int annual_h_month;
     int annual_l_month;
-    vector<weatherData> monthlyData[12];
+    weatherData monthlyData[12];
 };//annualWeather
 //initially did this project with an array of pointers to pointers of arrays
 //but just making this structure, that held a year of data was much cleaner looking
@@ -59,7 +58,7 @@ bool mainLoop(char *choice, const int data_entered);
 string enumMonth(const int mth); //gets a string of the month
 weatherData getWeatherData(const int mth = -1, const char t_type = 'F', const string r_type = "inches"); //'set' would be a better term I guess
 void displayWeatherData(const weatherData output, const int mth); //displays a month of data
-void setAnnualData(annualWeather &year_data); //sets the annual averages/his/lows
+void setAnnualData(vector<annualWeather> &year_data); //sets the annual averages/his/lows
 void displayAnnualData(const annualWeather yr_report); //displays a year of data
 //end prototypes
 
@@ -76,7 +75,7 @@ char temp_type = 'F', choice = '0', metric = 'n',year_change = 'n', \
      metric_c[] = {'y','n'}, year_c[] = {'y','n'};
 string rain_type = "inches";
 
-vector<annualWeather> report;
+vector<annualWeather> report[100];
 
 while (mainLoop(&choice, data_entered)){
     /*
@@ -93,25 +92,25 @@ while (mainLoop(&choice, data_entered)){
 
         }
         data_entered = 1; //data entry flag
-        cout << "How many years of data would you like to enter: ";
-        GetNum(year_total,1);
+        cout << "How many years of data would you like to enter (Max 100): ";
+        GetNumInRange(year_total,100);
         year_num = current_year-year_total;
         //sets year to the lowest (ex. 2018-2 = 2016) we are getting data for
-        report.push_back(annualWeather[year_total]);
+        //report.annualWeather[year_total];
         //array of annualWeather = number of years we need
 
         for (int year=0; year<year_total; year++){
-            report[year].year = current_year - year - 1;
+            (*report)[year].year = current_year - year - 1;
             //keep having to use 'current-i-1' math and it looks ugly
             //also use year so many times it looks like it's spelled wrong - critical feature
             cout << "Year " << current_year - year - 1<< endl;
             for (int month=JANUARY; month<=DECEMBER;month++){
-                report[year].monthlyData[month] = getWeatherData(month, temp_type, rain_type); //set monthly level data
+                (*report)[year].monthlyData[month] = getWeatherData(month, temp_type, rain_type); //set monthly level data
                 cout << endl;
                 //displayWeatherData(report[year].monthlyData[month], month);
                 //just for testing
             }
-            setAnnualData(report[year]); //sets the annual level data
+            setAnnualData((*report)[year]); //sets the annual level data
             year_num++; //will end on the current_year
         }
     } //end choice 'a'
