@@ -16,8 +16,10 @@ Write a program that will prompt the user for this information.
  * Class: CS 102                                                               *
  *                                                                             *
  * Function: Employees - Helps keep track of your production workers           *
+ *           With exceptions                                                   *
  *                                                                             *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+ //The code seems worse for using exceptions
 
 #include <iostream>
 #include <iomanip>
@@ -54,15 +56,30 @@ int main() {
             cout << "Employment year: ";
             GetNum(year);
             cout << "Employment month: ";
-            GetNumInRange(month,12,1);
+            GetNum(month);
             cout << "Employment day: ";
-            GetNumInRange(day,31,1);
+            GetNum(day);
             cout << "Day(1) or Night(2) shift: ";
-            GetNumInRange(shift,2,1);
+            GetNum(shift);
             cout << "What is the pay rate: ";
             GetNum(rate);
-            ProductionWorker temp(shift, rate, name, number, year, month, day);
-            my_only_employee = temp;
+            try {
+                my_only_employee.setHireDate(year, month, day);
+                my_only_employee.setName(name);
+                my_only_employee.setNumber(number);
+                my_only_employee.setRate(rate);
+                my_only_employee.setShift(shift);
+            }
+            catch(Employee::InvalidEmployeeNumber) {
+                cout << "Invalid Employee Number - 0 to 999 only" << endl;
+            }
+            catch(ProductionWorker::InvalidPayRate) {
+                cout << "Invalid Pay Rate - Must be positive" << endl;
+            }
+            catch(ProductionWorker::InvalidShift) {
+                cout << "Invalid Shift - 0 or 1 only" << endl;
+            }
+            getchar();
         } //selection 1
         if (selection == 2) {
             setcolor(12);

@@ -57,8 +57,20 @@ public:
             shift = shift_time;
             pay_rate = rate;
     }
-    void setRate(double rate) { pay_rate = rate; }
-    void setShift(int shift_time) { shift = shift_time; }
+    class InvalidPayRate{};
+    class InvalidShift{};
+    void setRate(double rate) {
+        if (rate < 0)
+            throw InvalidPayRate();
+        else
+            pay_rate = rate;
+    }
+    void setShift(int shift_time) {
+        if (shift_time < 0 || shift_time > 2)
+            throw InvalidShift();
+        else
+            shift = shift_time;
+    }
     string getShift() {
         if (shift == 1)
             return "Day";
